@@ -1,0 +1,6 @@
+= Cadastre & Address Data Modelling Project Supermodel
+
+[[NOTE]]
+====
+This is an early draft document for the Queensland Department of Resources' 'Cadastre & Address Data Modelling Project'. It is not currently for public release.
+====
