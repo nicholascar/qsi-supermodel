@@ -1,4 +1,4 @@
-= Cadastre & Address Data Modelling Project Supermodel
+= Queensland Cadastre & Address Data Modelling Project Supermodel
 
 [[NOTE]]
 ====
