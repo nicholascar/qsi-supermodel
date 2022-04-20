@@ -29,7 +29,7 @@ This is an early draft document for the Queensland Department of Resources' 'Cad
 
 | R01 | Blah blah | ? ? ? | xxx
 | R02 | Blah blah | ? ? ? | xxx
-
+| R04 | The solution will utilize a new database having been migrated from the existing Ingress DB's used for Cadastre and addressing | |
 |===
 
 == Introduction
