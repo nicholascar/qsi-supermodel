@@ -1,4 +1,22 @@
 = Queensland Cadastre & Address Data Modelling Project Supermodel
+:toc: left
+:table-stripes: even
+:sectnums:
+
+== Metadata
+
+[width=75%, frame=none, grid=none, cols="1,5"]
+|===
+|**IRI** | -
+|**Title** | QCAD Supermodel Specifciation
+|**Description** | This QCAD Supermodel is an overarching data model that provides integration logic for Cadastre, Addressing and other spatial data held by the Queensland Department of Resources
+|**Created** | 2022-03-13
+|**Modified** | 2022-03-20
+|**Issued** | 0000-00-00
+|**Creator** | Consortium through https://frontiersi.com.au[Frontier SI]
+|**Publisher** | -
+|**License** | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)] -- likely but not ratified yet
+|===
 
 [[NOTE]]
 ====
@@ -13,3 +31,17 @@ This is an early draft document for the Queensland Department of Resources' 'Cad
 | R02 | Blah blah | ? ? ? | xxx
 
 |===
+
+== Introduction
+
+=== Existing Supermodels
+
+== Requirements
+
+== Model
+
+=== Model Structure
+
+=== Data Domains
+
+==== Spatiality
