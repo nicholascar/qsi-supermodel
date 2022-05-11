@@ -1,4 +1,4 @@
-= Queensland Cadastre & Address Data Modelling Project Supermodel
+= Queensland Land Information Supermodel
 :toc: left
 :table-stripes: even
 :sectnums:
