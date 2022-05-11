@@ -1,15 +1,22 @@
-= Queensland Land Information Supermodel
+= Queensland Land Information Supermodel Guidance
 :toc: left
 :table-stripes: even
 :sectnums:
+
+[[NOTE]]
+====
+This is an early draft document for the Queensland Department of Resources' 'Cadastre & Address Data Modelling Project'. It is not currently for wide release.
+====
+
+This document is both the front page of the Queensland Land Information Supermodel's repository and a _Guidance document_ and introduces all the other elements of this Supermodel.
 
 == Metadata
 
 [width=75%, frame=none, grid=none, cols="1,5"]
 |===
 |**IRI** | -
-|**Title** | QCAD Supermodel Specifciation
-|**Description** | This QCAD Supermodel is an overarching data model that provides integration logic for Cadastre, Addressing and other spatial data held by the Queensland Department of Resources
+|**Title** | QLI Supermodel Guidance
+|**Description** |This document is both the front page of the Queensland Land Information Supermodel's repository and a _Guidance document_ and introduces all the other elements of this Supermodel.
 |**Created** | 2022-03-13
 |**Modified** | 2022-03-20
 |**Issued** | 0000-00-00
@@ -18,10 +25,23 @@
 |**License** | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)] -- likely but not ratified yet
 |===
 
-[[NOTE]]
-====
-This is an early draft document for the Queensland Department of Resources' 'Cadastre & Address Data Modelling Project'. It is not currently for public release.
-====
+== Introduction
+
+A Supermodel is an integrated, multi-part data model following a pattern implemented specifically for a particlar scenario. This Supermodel is implemented for the Queensland Land Information Implementation Testing project, started in April, 2022.
+
+=== _Viewpoints_
+
+This Supermodel is described in series of resources that are formulated according to the Reference Model for Open Distributed Processing (RM-ODP) <<RMODP>>. Each resource presents a _viewpoint_ which gives a different perspective on the scenario.
+
+The main resources within this Supermodel and the RM-ODP _viewpoint_ for which they are defined are:
+
+. https://nicholascar.com/qli-supermodel/supermodel.html[Model Document] - the _Information Viewpoint_
+. https://nicholascar.com/qli-supermodel/requirements.html[Requirements listing] - part of the _Enterprise Viewpoint_
+. ...
+
+
+
+
 
 
 |===
@@ -38,10 +58,3 @@ This is an early draft document for the Queensland Department of Resources' 'Cad
 
 == Requirements
 
-== Model
-
-=== Model Structure
-
-=== Data Domains
-
-==== Spatiality

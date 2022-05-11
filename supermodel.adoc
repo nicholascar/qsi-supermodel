@@ -1,9 +1,82 @@
 = Queensland Land Information Supermodel
+:sectnums:
 
-Test
+[[NOTE]]
+====
+This is an early draft document for the Queensland Department of Resources' 'Cadastre & Address Data Modelling Project'. It is not currently for wide release.
+====
+
+== Introduction
+
+[NOTE]
+====
+Introduce the Supermodel Concept
+
+* Scenario explanation
+* General Supermodel information
+* List other preamble sections e.g. Terms & Defs
+====
+
+== Model
+
+=== Model Structure
+
+==== Data Domains
 
 [id=fig-level-1]
-.LEvel 1
+.Level 1
 image::images/level-1.png[]
+
+==== Central Classes
+
+[id=fig-level-2]
+.Level 2
+image::images/level-2.png[]
+
+==== Main Classes
+
+[id=fig-level-3]
+.Level 3
+image::images/level-3.png[]
+
+===== Demonstration Implementation Overviews
+
+[id=fig-level-3-cadastre, width="50%"]
+.Level 3
+image::images/level-3-cadastre.png[]
+
+[id=fig-level-3-addressing]
+.Level 3
+image::images/level-3-addressing.png[]
+
+[id=fig-level-3-placenames]
+.Level 3
+image::images/level-3-placenames.png[]
+
+==== Component Models
+
+_Component Models_ are implemented for each Dataset within this scenario's scope. So far, a few Datasets are known to be within scope and these are given in <<#fig-level-3-datasets, Figure 7>>.
+
+[id=fig-level-3-datasets]
+.Level 3 Datasets
+image::images/level-3-datasets.png[]
+
+==== Overarching Model
+
+For this Supermodel scenario, a fairly succinct overarching model that contains the _Main Classes_ of each of the _Component Models_ can be implemented since there is not a large number of Datasets for which _Component Models_ are needed. <<#fig-level-3-overview, Figure 8>> presents this overarching model.
+
+[id=fig-level-3-overview]
+.Level 3 Datasets
+image::images/level-3-overview.png[]
+
+==== Spatiality
+
+==== Feature Labelling
+
+==== Data Cataloguing
+
+
+
+
 
 Test

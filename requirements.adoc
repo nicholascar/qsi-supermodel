@@ -1,0 +1,30 @@
+= Queensland Land Information Supermodel
+:sectnums:
+
+[[NOTE]]
+====
+This is an early draft document for the Queensland Department of Resources' 'Cadastre & Address Data Modelling Project'. It is not currently for wide release.
+====
+
+== Introduction
+
+To be added 
+
+== Requirements
+
+[cols="1,4,3,3,3"]
+|===
+| ID | Statement | Relevant Model Elements | Canonical Examples | Demonstrations 
+
+| R01 
+| `Primary Address` instances _MUST__ reference instances of `Parcel` or subclasses of it, as their `Addressable Object`s 
+| Overarching Model  Address Component Model
+| http://example.com[Canonical Example 1], http://example.com[Canonical Example 3]
+| http://example.com[Demo Scenario1 1]
+| R01 
+| `Secondary Address` instances _MUST__ reference instances of `Parcel Collection`, `Parcel` `Building` or `Road Centreline`, or subclasses of them, as their `Addressable Object`s 
+| Overarching Model  Address Component Model
+| http://example.com[Canonical Example 1], http://example.com[Canonical Example 3]
+| http://example.com[Demo Scenario1 1]
+
+|===
