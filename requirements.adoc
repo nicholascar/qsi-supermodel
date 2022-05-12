@@ -17,14 +17,14 @@ To be added
 | ID | Statement | Relevant Model Elements | Canonical Examples | Demonstrations 
 
 | R01 
-| `Primary Address` instances _MUST__ reference instances of `Parcel` or subclasses of it, as their `Addressable Object`s 
+| `Primary Address` instances _MUST_ reference instances of `Parcel` or subclasses of it, as their `Addressable Object`s 
 | Overarching Model  Address Component Model
 | http://example.com[Canonical Example 1], http://example.com[Canonical Example 3]
-| http://example.com[Demo Scenario1 1]
+| http://example.com[Demo Scenario 1]
 | R01 
-| `Secondary Address` instances _MUST__ reference instances of `Parcel Collection`, `Parcel` `Building` or `Road Centreline`, or subclasses of them, as their `Addressable Object`s 
+| `Secondary Address` instances _MUST_ reference instances of `Parcel Collection`, `Parcel` `Building` or `Road Centreline`, or subclasses of them, as their `Addressable Object`s 
 | Overarching Model  Address Component Model
 | http://example.com[Canonical Example 1], http://example.com[Canonical Example 3]
-| http://example.com[Demo Scenario1 1]
+| http://example.com[Demo Scenario 1]
 
 |===
