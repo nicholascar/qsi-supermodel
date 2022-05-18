@@ -482,18 +482,41 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Primary Address</code> instances <em>MUST</em> reference instances of <code>Parcel</code> or subclasses of it, as their `Addressable Object`s</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Overarching Model  Address Component Model</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://example.com">Canonical Example 1</a>, <a href="http://example.com">Canonical Example 3</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://example.com">Demo Scenario 1</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ideally entities as address components that are maintained elsewhere e.g. locality (and Local Government Area even though this isn&#8217;t part of an official address string) should be linked to rather than repeated in the addressing database.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address Model, Overarching Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">R18-v01, R18-i01, R18-i02</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Notebook SD01, EG01</p></td>
 </tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_model_mappings">3. Model Mappings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Queensland Government&#8217;s <a href="https://www.resources.qld.gov.au">Department of Resources</a>' Spatial Information business unit generated Address Model Requiremenst as part of a 2022 <em>Cadastre &amp; Address Model</em> project. Their Requirements / Validator maping is as per <a href="#tbl-req-qld">Table 1</a> below.</p>
+</div>
+<table id="tbl-req-qld" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Requirements to Validator Shapes Mapping for Queensland Department of Resources</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 66.6668%;">
+</colgroup>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Secondary Address</code> instances <em>MUST</em> reference instances of <code>Parcel Collection</code>, <code>Parcel</code> <code>Building</code> or <code>Road Centreline</code>, or subclasses of them, as their `Addressable Object`s</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Overarching Model  Address Component Model</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://example.com">Canonical Example 1</a>, <a href="http://example.com">Canonical Example 3</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://example.com">Demo Scenario 1</a></p></td>
+<th class="tableblock halign-left valign-top">Requirement</th>
+<th class="tableblock halign-left valign-top">Validator Shape</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://example.com/requirement/A18">A18</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://w3id.org/profile/anz-address/validator/sh-02">sh-02</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graph shape test only: values not tested for existence</p></td>
 </tr>
 </tbody>
 </table>
@@ -502,7 +525,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-12 02:54:47 UTC
+Last updated 2022-05-18 06:34:26 UTC
 </div>
 </div>
 </body>
