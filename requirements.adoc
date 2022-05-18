@@ -16,15 +16,22 @@ To be added
 |===
 | ID | Statement | Relevant Model Elements | Canonical Examples | Demonstrations 
 
-| R01 
-| `Primary Address` instances _MUST_ reference instances of `Parcel` or subclasses of it, as their `Addressable Object`s 
-| Overarching Model  Address Component Model
-| http://example.com[Canonical Example 1], http://example.com[Canonical Example 3]
-| http://example.com[Demo Scenario 1]
-| R01 
-| `Secondary Address` instances _MUST_ reference instances of `Parcel Collection`, `Parcel` `Building` or `Road Centreline`, or subclasses of them, as their `Addressable Object`s 
-| Overarching Model  Address Component Model
-| http://example.com[Canonical Example 1], http://example.com[Canonical Example 3]
-| http://example.com[Demo Scenario 1]
+| A18 
+| Ideally entities as address components that are maintained elsewhere e.g. locality (and Local Government Area even though this isn't part of an official address string) should be linked to rather than repeated in the addressing database. 
+| Address Model, Overarching Model 
+| R18-v01, R18-i01, R18-i02 
+| Notebook SD01, EG01
 
+|===
+
+== Model Mappings
+
+The Queensland Government's https://www.resources.qld.gov.au[Department of Resources]' Spatial Information business unit generated Address Model Requiremenst as part of a 2022 _Cadastre & Address Model_ project. Their Requirements / Validator maping is as per <<tbl-req-qld, Table 1>> below.
+
+[id="tbl-req-qld", cols="1,1,4"]
+.Requirements to Validator Shapes Mapping for Queensland Department of Resources
+|===
+| Requirement | Validator Shape | Notes
+
+| http://example.com/requirement/A18[A18] | http://w3id.org/profile/anz-address/validator/sh-02[sh-02] | Graph shape test only: values not tested for existence
 |===
