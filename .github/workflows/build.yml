@@ -22,9 +22,9 @@ jobs:
         asciidoctor README.adoc -o docs/index.html
         echo "Add supermodel to docs/"
         asciidoctor supermodel.adoc -o docs/supermodel.html
-        sed -i 's#img src="#img src="https://nicholascar.com/qli-supermodel/#' docs/supermodel.html
+        sed -i 's#img src="#img src="https://nicholascar.com/qsi-supermodel/#' docs/supermodel.html
         asciidoctor requirements.adoc -o docs/requirements.html
-        sed -i 's#img src="#img src="https://nicholascar.com/qli-supermodel/#' docs/requirements.html  
+        sed -i 's#img src="#img src="https://nicholascar.com/qsi-supermodel/#' docs/requirements.html  
         echo "Add supermodel RDF to docs/"
         cp rdf/*.ttl docs/
         echo "Add images to docs/"

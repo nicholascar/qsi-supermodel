@@ -1,4 +1,4 @@
-= Queensland Land Information Supermodel
+= Queensland Spatial Information Supermodel
 :toc: left
 :table-stripes: even
 :sectnums:
@@ -12,7 +12,7 @@ This scenario is that of Queensland Cadastre, Addressing, Place Naming and Admin
 
 == Introduction
 
-The purpose of a Supermodel such as this one is to allow for data integration across multiple component models. This particular Supermodel indicates how to integrate data formulated according to the <<ANZ National Address Model>> (Candidate), the proposed <<QLI Cadastral Model>>, a model for Place Names and anotehr for Administrative Areas.
+The purpose of a Supermodel such as this one is to allow for data integration across multiple component models. This particular Supermodel indicates how to integrate data formulated according to the <<ANZ National Address Model>> (Candidate), the proposed <<QSI Cadastral Model>>, a model for Place Names and anotehr for Administrative Areas.
 
 The Supermodel does this by implementing a <<Backbone Model>> that is an abstracted version of the main objects within the various Component Models. This Backbone Model does not implement any material not already present in the Component Model.
 
@@ -26,20 +26,23 @@ OWL models are diagrams that are similar to UML diagrams and use elements from t
 .Key for OWL diagram figures
 image::images/key.png[]
 
-
 == Models
 
-This Supermodel implements a "Backbone Model" which contains central elements from the various Component Models and acts as the integrative model between the others.
+This Supermodel implements a "Backbone Model" which contains central elements from the various Component Models and acts as the integrative model between them The Backbone Model and Component Models together make the Supermodel.
+
+[id=fig-models]
+.The various Models of this Supermodel. The Administrative Areas model has not been detailed to date.
+image::images/models.png[]
 
 === Backbone Model
 
-The Backbone Model for this Queensland Land Information scenario is as per Figure 2.
+The Backbone Model for this Queensland Spatial Information scenario overviewed in <<#fig-backbone, Figure 3>>. The formal characterisation of the model in OWL is given in the file [backbone.ttl]
 
 [id=fig-backbone]
 .Backbone Model overview. Uncertain objects are shown in light red.
 image::images/backbone.png[]
 
-Figure 2 indicates two main conceptual domains (the yellow and blue) centered on `Feature Labels` (defined here) and `geo:Feature`s which are "Anything spatial (being or having a shape, position or an extent)." <<GEOS>>. Feature Labels are any form of identifying information assigned to a Feature.
+Figure 2 indicates two main conceptual domains (the yellow and blue) centered on `Feature Labels` (defined here) and `geo:Feature` s which are "Anything spatial (being or having a shape, position or an extent)." <<GEOS>>. Feature Labels are any form of identifying information assigned to a Feature.
 
 The class hierharchy expressed in this Backbone Model (with sub class of arrows) indicates that:
 
@@ -53,7 +56,7 @@ The various Component Models (next) use these classes of object and imlplement m
 
 ==== ANZ National Address Model
 
-==== QLI Cadastral Model
+==== QSI Cadastral Model
 
 [NOTE]
 ====

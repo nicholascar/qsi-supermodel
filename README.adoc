@@ -15,7 +15,7 @@ This document is both the front page of the Queensland Land Information Supermod
 [width=75%, frame=none, grid=none, cols="1,5"]
 |===
 |**IRI** | -
-|**Title** | QLI Supermodel Guidance
+|**Title** | QSI Supermodel Guidance
 |**Description** |This document is both the front page of the Queensland Land Information Supermodel's repository and a _Guidance document_ and introduces all the other elements of this Supermodel.
 |**Created** | 2022-03-13
 |**Modified** | 2022-03-20
@@ -35,8 +35,8 @@ This Supermodel is described in series of resources that are formulated accordin
 
 The main resources within this Supermodel and the RM-ODP _viewpoint_ for which they are defined are:
 
-. https://nicholascar.com/qli-supermodel/supermodel.html[Model Document] - the _Information Viewpoint_
-. https://nicholascar.com/qli-supermodel/requirements.html[Requirements listing] - part of the _Enterprise Viewpoint_
+. https://nicholascar.com/qsi-supermodel/supermodel.html[Model Document] - the _Information Viewpoint_
+. https://nicholascar.com/qsi-supermodel/requirements.html[Requirements listing] - part of the _Enterprise Viewpoint_
 . ...
 
 
