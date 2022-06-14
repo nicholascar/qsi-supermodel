@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Queensland Land Information Supermodel</title>
+<title>Queensland Spatial Information Supermodel</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,25 +436,123 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>Queensland Land Information Supermodel</h1>
+<h1>Queensland Spatial Information Supermodel</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_modelling_methods">1.1. Modelling Methods</a></li>
+</ul>
+</li>
+<li><a href="#_models">2. Models</a>
+<ul class="sectlevel2">
+<li><a href="#_backbone_model">2.1. Backbone Model</a></li>
+<li><a href="#_component_models">2.2. Component Models</a></li>
+</ul>
+</li>
+<li><a href="#_model">3. Model</a>
+<ul class="sectlevel2">
+<li><a href="#_model_structure">3.1. Model Structure</a></li>
+</ul>
+</li>
+<li><a href="#_bibliography">4. Bibliography</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div id="NOTE" class="exampleblock">
-<div class="content">
 <div class="paragraph">
-<p>This is an early draft document for the Queensland Department of Resources' 'Cadastre &amp; Address Data Modelling Project'. It is not currently for wide release.</p>
+<p>This is an overarching model - a Supermodel - used to integrate multiple, individual, models together for use within a particular scenario.</p>
 </div>
+<div class="paragraph">
+<p>This scenario is that of Queensland Cadastre, Addressing, Place Naming and Admin Areas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The purpose of a Supermodel such as this one is to allow for data integration across multiple component models. This particular Supermodel indicates how to integrate data formulated according to the <a href="#_anz_national_address_model">ANZ National Address Model</a> (Candidate), the proposed <a href="#_qsi_cadastral_model">QSI Cadastral Model</a>, a model for Place Names and anotehr for Administrative Areas.</p>
+</div>
+<div class="paragraph">
+<p>The Supermodel does this by implementing a <a href="#_backbone_model">Backbone Model</a> that is an abstracted version of the main objects within the various Component Models. This Backbone Model does not implement any material not already present in the Component Model.</p>
+</div>
+<div class="sect2">
+<h3 id="_modelling_methods"><a class="anchor" href="#_modelling_methods"></a>1.1. Modelling Methods</h3>
+<div class="paragraph">
+<p>All the Component Models and the Backbone Model given here are implemented using the Web Ontology Language known as OWL <a href="#OWL">[OWL]</a>. OWL is a well used, standardised, powerful, formal, conceptual modelling language. Use of OWL creates data models that data can be validated against in automated ways, see <a href="#Data Validation">[Data Validation]</a>.</p>
+</div>
+<div class="paragraph">
+<p>OWL models are diagrams that are similar to UML diagrams and use elements from the following key.</p>
+</div>
+<div id="fig-key" class="imageblock">
+<div class="content">
+<img src="https://nicholascar.com/qsi-supermodel/images/key.png" alt="key">
+</div>
+<div class="title">Figure 1. Key for OWL diagram figures</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introduction">1. Introduction</h2>
+<h2 id="_models"><a class="anchor" href="#_models"></a>2. Models</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This Supermodel implements a "Backbone Model" which contains central elements from the various Component Models and acts as the integrative model between them The Backbone Model and Component Models together make the Supermodel.</p>
+</div>
+<div id="fig-models" class="imageblock">
+<div class="content">
+<img src="https://nicholascar.com/qsi-supermodel/images/models.png" alt="models">
+</div>
+<div class="title">Figure 2. The various Models of this Supermodel. The Administrative Areas model has not been detailed to date.</div>
+</div>
+<div class="sect2">
+<h3 id="_backbone_model"><a class="anchor" href="#_backbone_model"></a>2.1. Backbone Model</h3>
+<div class="paragraph">
+<p>The Backbone Model for this Queensland Spatial Information scenario overviewed in <a href="#fig-backbone">Figure 3</a>. The formal characterisation of the model in OWL is given in the file [backbone.ttl]</p>
+</div>
+<div id="fig-backbone" class="imageblock">
+<div class="content">
+<img src="https://nicholascar.com/qsi-supermodel/images/backbone.png" alt="backbone">
+</div>
+<div class="title">Figure 3. Backbone Model overview. Uncertain objects are shown in light red.</div>
+</div>
+<div class="paragraph">
+<p>Figure 2 indicates two main conceptual domains (the yellow and blue) centered on <code>Feature Labels</code> (defined here) and <code>geo:Feature</code> s which are "Anything spatial (being or having a shape, position or an extent)." <a href="#GEOS">[GEOS]</a>. Feature Labels are any form of identifying information assigned to a Feature.</p>
+</div>
+<div class="paragraph">
+<p>The class hierharchy expressed in this Backbone Model (with sub class of arrows) indicates that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Addresses, Administrative Areas and perhaps Titles are all forms of Feature Labels</p>
+</li>
+<li>
+<p>Place Names are a form of Address (a very simple one!)</p>
+</li>
+<li>
+<p>Places are Addressable Objects and Addressable Objects and Parcels are types of Feature</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The various Component Models (next) use these classes of object and imlplement many more specilised forms of them.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_component_models"><a class="anchor" href="#_component_models"></a>2.2. Component Models</h3>
+<div class="sect3">
+<h4 id="_anz_national_address_model"><a class="anchor" href="#_anz_national_address_model"></a>2.2.1. ANZ National Address Model</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_qsi_cadastral_model"><a class="anchor" href="#_qsi_cadastral_model"></a>2.2.2. QSI Cadastral Model</h4>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -484,104 +582,119 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+</div>
+</div>
 <div class="sect1">
-<h2 id="_model">2. Model</h2>
+<h2 id="_model"><a class="anchor" href="#_model"></a>3. Model</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_model_structure">2.1. Model Structure</h3>
+<h3 id="_model_structure"><a class="anchor" href="#_model_structure"></a>3.1. Model Structure</h3>
 <div class="sect3">
-<h4 id="_data_domains">2.1.1. Data Domains</h4>
+<h4 id="_data_domains"><a class="anchor" href="#_data_domains"></a>3.1.1. Data Domains</h4>
 <div id="fig-level-1" class="imageblock">
 <div class="content">
-<img src="https://nicholascar.com/qli-supermodel/images/level-1.png" alt="level 1">
+<img src="https://nicholascar.com/qsi-supermodel/images/level-1.png" alt="level 1">
 </div>
-<div class="title">Figure 1. Level 1</div>
+<div class="title">Figure 4. Level 1</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_central_classes">2.1.2. Central Classes</h4>
+<h4 id="_central_classes"><a class="anchor" href="#_central_classes"></a>3.1.2. Central Classes</h4>
 <div id="fig-level-2" class="imageblock">
 <div class="content">
-<img src="https://nicholascar.com/qli-supermodel/images/level-2.png" alt="level 2">
+<img src="https://nicholascar.com/qsi-supermodel/images/level-2.png" alt="level 2">
 </div>
-<div class="title">Figure 2. Level 2</div>
+<div class="title">Figure 5. Level 2</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_main_classes">2.1.3. Main Classes</h4>
+<h4 id="_main_classes"><a class="anchor" href="#_main_classes"></a>3.1.3. Main Classes</h4>
 <div id="fig-level-3" class="imageblock">
 <div class="content">
-<img src="https://nicholascar.com/qli-supermodel/images/level-3.png" alt="level 3">
-</div>
-<div class="title">Figure 3. Level 3</div>
-</div>
-<div class="sect4">
-<h5 id="_demonstration_implementation_overviews">Demonstration Implementation Overviews</h5>
-<div id="fig-level-3-cadastre" class="imageblock">
-<div class="content">
-<img src="https://nicholascar.com/qli-supermodel/images/level-3-cadastre.png" alt="level 3 cadastre" width="50%">
-</div>
-<div class="title">Figure 4. Level 3</div>
-</div>
-<div id="fig-level-3-addressing" class="imageblock">
-<div class="content">
-<img src="https://nicholascar.com/qli-supermodel/images/level-3-addressing.png" alt="level 3 addressing">
-</div>
-<div class="title">Figure 5. Level 3</div>
-</div>
-<div id="fig-level-3-placenames" class="imageblock">
-<div class="content">
-<img src="https://nicholascar.com/qli-supermodel/images/level-3-placenames.png" alt="level 3 placenames">
+<img src="https://nicholascar.com/qsi-supermodel/images/level-3.png" alt="level 3">
 </div>
 <div class="title">Figure 6. Level 3</div>
 </div>
+<div class="sect4">
+<h5 id="_demonstration_implementation_overviews"><a class="anchor" href="#_demonstration_implementation_overviews"></a>Demonstration Implementation Overviews</h5>
+<div id="fig-level-3-cadastre" class="imageblock">
+<div class="content">
+<img src="https://nicholascar.com/qsi-supermodel/images/level-3-cadastre.png" alt="level 3 cadastre" width="50%">
+</div>
+<div class="title">Figure 7. Level 3</div>
+</div>
+<div id="fig-level-3-addressing" class="imageblock">
+<div class="content">
+<img src="https://nicholascar.com/qsi-supermodel/images/level-3-addressing.png" alt="level 3 addressing">
+</div>
+<div class="title">Figure 8. Level 3</div>
+</div>
+<div id="fig-level-3-placenames" class="imageblock">
+<div class="content">
+<img src="https://nicholascar.com/qsi-supermodel/images/level-3-placenames.png" alt="level 3 placenames">
+</div>
+<div class="title">Figure 9. Level 3</div>
+</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_component_models">2.1.4. Component Models</h4>
+<h4 id="_component_models_2"><a class="anchor" href="#_component_models_2"></a>3.1.4. Component Models</h4>
 <div class="paragraph">
 <p><em>Component Models</em> are implemented for each Dataset within this scenario&#8217;s scope. So far, a few Datasets are known to be within scope and these are given in <a href="#fig-level-3-datasets">Figure 7</a>.</p>
 </div>
 <div id="fig-level-3-datasets" class="imageblock">
 <div class="content">
-<img src="https://nicholascar.com/qli-supermodel/images/level-3-datasets.png" alt="level 3 datasets">
+<img src="https://nicholascar.com/qsi-supermodel/images/level-3-datasets.png" alt="level 3 datasets">
 </div>
-<div class="title">Figure 7. Level 3 Datasets</div>
+<div class="title">Figure 10. Level 3 Datasets</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_overarching_model">2.1.5. Overarching Model</h4>
+<h4 id="_overarching_model"><a class="anchor" href="#_overarching_model"></a>3.1.5. Overarching Model</h4>
 <div class="paragraph">
 <p>For this Supermodel scenario, a fairly succinct overarching model that contains the <em>Main Classes</em> of each of the <em>Component Models</em> can be implemented since there is not a large number of Datasets for which <em>Component Models</em> are needed. <a href="#fig-level-3-overview">Figure 8</a> presents this overarching model.</p>
 </div>
 <div id="fig-level-3-overview" class="imageblock">
 <div class="content">
-<img src="https://nicholascar.com/qli-supermodel/images/level-3-overview.png" alt="level 3 overview">
+<img src="https://nicholascar.com/qsi-supermodel/images/level-3-overview.png" alt="level 3 overview">
 </div>
-<div class="title">Figure 8. Level 3 Datasets</div>
+<div class="title">Figure 11. Level 3 Datasets</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_spatiality">2.1.6. Spatiality</h4>
+<h4 id="_spatiality"><a class="anchor" href="#_spatiality"></a>3.1.6. Spatiality</h4>
 
 </div>
 <div class="sect3">
-<h4 id="_feature_labelling">2.1.7. Feature Labelling</h4>
+<h4 id="_feature_labelling"><a class="anchor" href="#_feature_labelling"></a>3.1.7. Feature Labelling</h4>
 
 </div>
 <div class="sect3">
-<h4 id="_data_cataloguing">2.1.8. Data Cataloguing</h4>
-<div class="paragraph">
-<p>Test</p>
+<h4 id="_data_cataloguing"><a class="anchor" href="#_data_cataloguing"></a>3.1.8. Data Cataloguing</h4>
+
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bibliography"><a class="anchor" href="#_bibliography"></a>4. Bibliography</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a id="GEOS"></a> [GEOS] Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data</em>, OGC® Implementation Specification (2022). <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html" class="bare">https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html</a></p>
+</li>
+<li>
+<p><a id="OWL"></a> [OWL] World Wide Web Consortium, <em>OWL 2 Web Ontology Language Document Overview (Second Edition)</em>, W3C Recommendaton (11 December 2012). <a href="https://www.w3.org/TR/owl2-overview/" class="bare">https://www.w3.org/TR/owl2-overview/</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-02 05:05:16 UTC
+Last updated 2022-06-14 23:58:38 UTC
 </div>
 </div>
 </body>
