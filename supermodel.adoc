@@ -1,12 +1,59 @@
 = Queensland Land Information Supermodel
+:toc: left
+:table-stripes: even
 :sectnums:
+:sectids:
+:sectanchors:
 
-[[NOTE]]
-====
-This is an early draft document for the Queensland Department of Resources' 'Cadastre & Address Data Modelling Project'. It is not currently for wide release.
-====
+This is an overarching model - a Supermodel - used to integrate multiple, individual, models together for use within a particular scenario.
+
+This scenario is that of Queensland Cadastre, Addressing, Place Naming and Admin Areas.
+
 
 == Introduction
+
+The purpose of a Supermodel such as this one is to allow for data integration across multiple component models. This particular Supermodel indicates how to integrate data formulated according to the <<ANZ National Address Model>> (Candidate), the proposed <<QLI Cadastral Model>>, a model for Place Names and anotehr for Administrative Areas.
+
+The Supermodel does this by implementing a <<Backbone Model>> that is an abstracted version of the main objects within the various Component Models. This Backbone Model does not implement any material not already present in the Component Model.
+
+=== Modelling Methods
+
+All the Component Models and the Backbone Model given here are implemented using the Web Ontology Language known as OWL <<OWL>>. OWL is a well used, standardised, powerful, formal, conceptual modelling language. Use of OWL creates data models that data can be validated against in automated ways, see <<Data Validation>>.
+
+OWL models are diagrams that are similar to UML diagrams and use elements from the following key.
+
+[id=fig-key]
+.Key for OWL diagram figures
+image::images/key.png[]
+
+
+== Models
+
+This Supermodel implements a "Backbone Model" which contains central elements from the various Component Models and acts as the integrative model between the others.
+
+=== Backbone Model
+
+The Backbone Model for this Queensland Land Information scenario is as per Figure 2.
+
+[id=fig-backbone]
+.Backbone Model overview. Uncertain objects are shown in light red.
+image::images/backbone.png[]
+
+Figure 2 indicates two main conceptual domains (the yellow and blue) centered on `Feature Labels` (defined here) and `geo:Feature`s which are "Anything spatial (being or having a shape, position or an extent)." <<GEOS>>. Feature Labels are any form of identifying information assigned to a Feature.
+
+The class hierharchy expressed in this Backbone Model (with sub class of arrows) indicates that:
+
+* Addresses, Administrative Areas and perhaps Titles are all forms of Feature Labels
+* Place Names are a form of Address (a very simple one!)
+* Places are Addressable Objects and Addressable Objects and Parcels are types of Feature
+
+The various Component Models (next) use these classes of object and imlplement many more specilised forms of them.
+
+=== Component Models
+
+==== ANZ National Address Model
+
+==== QLI Cadastral Model
 
 [NOTE]
 ====
@@ -76,7 +123,7 @@ image::images/level-3-overview.png[]
 ==== Data Cataloguing
 
 
+== Bibliography
 
-
-
-Test
+* [[GEOS]] [GEOS] Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data_, OGC® Implementation Specification (2022). https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html 
+* [[OWL]] [OWL] World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendaton (11 December 2012). https://www.w3.org/TR/owl2-overview/
