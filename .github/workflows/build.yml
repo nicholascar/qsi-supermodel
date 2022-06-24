@@ -28,13 +28,13 @@ jobs:
         echo "Add images to docs/"
         cp -r images docs/
         echo "Backbone Model"
-        mkdir doc/backbone
-        cp backbone/model.ttl doc/backbone/model.ttl
+        mkdir docs/backbone
+        cp backbone/model.ttl docs/backbone/model.ttl
         echo "QSI Place Names Model"
-        mkdir doc/placenames
-        asciidoctor placenames/placenames.adoc -o doc/placenames/index.html
-        cp placenames/*.ttl doc/placenames/
-        cp placenames/*.png doc/placenames/
+        mkdir docs/placenames
+        asciidoctor placenames/placenames.adoc -o docs/placenames/index.html
+        cp placenames/*.ttl docs/placenames/
+        cp placenames/*.png docs/placenames/
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
