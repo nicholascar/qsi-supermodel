@@ -32,7 +32,7 @@ jobs:
         cp backbone/model.ttl docs/backbone/model.ttl
         echo "QSI Place Names Model"
         mkdir docs/placenames
-        asciidoctor placenames/placenames.adoc -o docs/placenames/index.html
+        asciidoctor placenames/model.adoc -o docs/placenames/index.html
         cp placenames/*.ttl docs/placenames/
         cp placenames/*.png docs/placenames/
     - name: Deploy 🚀
