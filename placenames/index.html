@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Queensland Land Information Supermodel</title>
+<title>QSI Place Names Model</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,96 +436,412 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>Queensland Land Information Supermodel</h1>
+<h1>QSI Place Names Model</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_definition">1. Definition</a></li>
+<li><a href="#_model">2. Model</a>
+<ul class="sectlevel2">
+<li><a href="#_examples">2.1. Examples</a>
+<ul class="sectlevel3">
+<li><a href="#_haunted_house_place_name">2.1.1. Haunted House Place Name</a></li>
+<li><a href="#_haunted_house_address">2.1.2. Haunted House Address</a></li>
+<li><a href="#_a_placename_as_an_addresscomponent">2.1.3. A PlaceName as an AddressComponent</a></li>
+<li><a href="#_combined_modelling">2.1.4. Combined Modelling</a></li>
+</ul>
+</li>
+<li><a href="#_place_name_categorisation">2.2. Place Name Categorisation</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div id="NOTE" class="exampleblock">
+<div class="paragraph">
+<p>This model is a profile of the Australian Government&#8217;s <a href="https://linked.data.gov.au/def/placenames">Place Names Ontology</a> and the <a href="https://w3id.org/profile/anz-address">ANZ National Address Model</a>.</p>
+</div>
+<div class="paragraph">
+<p>It does not define any new classes or properties but just indicates a particular pattern of use of the Place Names Ontology with the ANZ National Address Model and several other, standard, ontologies.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_definition"><a class="anchor" href="#_definition"></a>1. Definition</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The formal definition of this profile is given below in human-readable form and in machine-readable form in the file <a href="https://nicholascar.com/qsi-supermodel/qsi-placenames/profile.ttl">profile</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://w3id.org/profile/qsi-placenames" class="bare">https://w3id.org/profile/qsi-placenames</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">QSI Place Names Model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A profile of the ANZ National Address Model and the Place Names Ontology for the representation of Place Names in Queensland</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is profile of</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/placenames"><code>placenames</code></a> , <a href="https://w3id.org/profile/anz-address"><code>anz-address</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Creator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://orcid.org/0000-0002-8742-7730">Nicholas J. Car</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Publisher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-24</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Modified</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-24</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issued</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0000-00-00</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">License</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commond BY 4.0</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rights</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(c) Nicholas Car, 2022</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/profile/qsi-placename/1.0" class="bare">https://w3id.org/profile/qsi-placename/1.0</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version info</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code repository</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/nicholascar/qsi-supermodel" class="bare">https://github.com/nicholascar/qsi-supermodel</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_model"><a class="anchor" href="#_model"></a>2. Model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The figure below overviews this model.</p>
+</div>
+<div id="fig-overview" class="imageblock">
 <div class="content">
+<img src="overview.png" alt="overview">
+</div>
+<div class="title">Figure 1. Overview OWL Diagram of the QSI Place Names Model</div>
+</div>
 <div class="paragraph">
-<p>This is an early draft document for the Queensland Department of Resources' 'Cadastre &amp; Address Data Modelling Project'. It is not currently for wide release.</p>
+<p>The central classes of this model are <code>PlaceName</code> and <code>Place</code> from the <a href="https://linked.data.gov.au/def/placenames">Place Names Ontology</a> which are related to <code>AddressComponent</code> and <code>AddressableObject</code> within the <a href="https://w3id.org/profile/anz-address">ANZ National Address Model</a> respectively. A <code>PlaceName</code> is equivalent to an <code>AddressComponent</code> sub typed as <code>placeName</code> from the <a href="https://nicholascar.com/anz-nat-addr-model-candidate/model.html#_address_component_types_vocabulary">Address Component Types vocabulary</a> and a <code>Place</code> is equivalent to an <code>AddressableObject</code>.</p>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_introduction">1. Introduction</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>To be added</p>
+<p>Modelled in this way, a <code>Place</code> may be both related to <code>Address</code> objects and <code>PlaceName</code> objects and the <code>PlaceName</code> object may be modelled as <code>Address</code> objects if that&#8217;s useful.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The ANZ National Address Model relates <code>Address</code> objects to <code>LifecycleStage</code> objects to know what point in an acceptance process the <code>Address</code> is in now or was in at some point in the past. This modelling reuses the same relation for a <code>PlaceName</code> and does not use the <code>status</code> property modelled in the Place Names Ontology.
+</td>
+</tr>
+</table>
 </div>
+<div class="paragraph">
+<p>To further detail this modelling,</p>
 </div>
-<div class="sect1">
-<h2 id="_requirements">2. Requirements</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
+<div id="fig-defail" class="imageblock text-center">
+<div class="content">
+<img src="pn-ac.png" alt="pn ac" width="70%">
+</div>
+<div class="title">Figure 2. Detailed modelling of the <code>Address</code>, <code>AddressableObject</code> and <code>AddressComponent</code> classes in the <a href="https://w3id.org/profile/anz-address">ANZ National Address Model</a> (A) and how this Place Names modelling relates to it (B). Note that the target of an <code>AddressComponent</code> object&#8217;s <code>hasValue' property is what a `PlaceName</code> object references with the property <code>name</code>.</div>
+</div>
+<div class="sect2">
+<h3 id="_examples"><a class="anchor" href="#_examples"></a>2.1. Examples</h3>
+<div class="paragraph">
+<p>For these examples, the following namespaces are used:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
-<col style="width: 7.1428%;">
-<col style="width: 28.5714%;">
-<col style="width: 21.4285%;">
-<col style="width: 21.4285%;">
-<col style="width: 21.4288%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+<col style="width: 40%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">ID</th>
-<th class="tableblock halign-left valign-top">Statement</th>
-<th class="tableblock halign-left valign-top">Relevant Model Elements</th>
-<th class="tableblock halign-left valign-top">Canonical Examples</th>
-<th class="tableblock halign-left valign-top">Demonstrations</th>
+<th class="tableblock halign-left valign-top">Prefix</th>
+<th class="tableblock halign-left valign-top">Namespace</th>
+<th class="tableblock halign-left valign-top">Note</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A18</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ideally entities as address components that are maintained elsewhere e.g. locality (and Local Government Area even though this isn&#8217;t part of an official address string) should be linked to rather than repeated in the addressing database.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address Model, Overarching Model</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R18-v01, R18-i01, R18-i02</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Notebook SD01, EG01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://w3id.org/profile/anz-address/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ Address Model namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://purl.org/dc/terms/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dublin Core Terms vocabulary namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://example.com/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An example namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov1:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>AddressComponentType</code> vocabulary namespace from the ANZ Address Model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>isov2:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://w3id.org/profile/anz-address/AddressLifecycleStageType/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>AddressLifecycleStage</code> vocabulary namespace from the ANZ Address Model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://www.opengis.net/ont/geosparql#</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The GeoSAPRQL Ontology&#8217;s namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>owl:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://www.w3.org/2002/07/owl#</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web Ontology Language ontology namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pn</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://linked.data.gov.au/def/placenames/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Place Names Ontology namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdfs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://www.w3.org/2000/01/rdf-schema#</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The namespace of the fundamental RDF Schema model used for OWL mododelling</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>time</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://www.w3.org/2006/time#</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time Ontology in OWL namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xsd:</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://www.w3.org/2001/XMLSchema#</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XML Schema Definitions ontology namespace</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_model_mappings">3. Model Mappings</h2>
-<div class="sectionbody">
+<div class="sect3">
+<h4 id="_haunted_house_place_name"><a class="anchor" href="#_haunted_house_place_name"></a>2.1.1. Haunted House Place Name</h4>
 <div class="paragraph">
-<p>The Queensland Government&#8217;s <a href="https://www.resources.qld.gov.au">Department of Resources</a>' Spatial Information business unit generated Address Model Requiremenst as part of a 2022 <em>Cadastre &amp; Address Model</em> project. Their Requirements / Validator maping is as per <a href="#tbl-req-qld">Table 1</a> below.</p>
+<p>Imagine a property of State significance with a Place Name.</p>
 </div>
-<table id="tbl-req-qld" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Requirements to Validator Shapes Mapping for Queensland Department of Resources</caption>
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 16.6666%;">
-<col style="width: 66.6668%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Requirement</th>
-<th class="tableblock halign-left valign-top">Validator Shape</th>
-<th class="tableblock halign-left valign-top">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://example.com/requirement/A18">A18</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://w3id.org/profile/anz-address/validator/sh-02">sh-02</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graph shape test only: values not tested for existence</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>The <code>PlaceName</code> "Haunted House" could be assigned to the <code>Place</code> - a <code>Property</code> in the Cadastral Model - like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:haunted-house
+    a pn:PlaceName ;
+    pn:name "Haunted House"@en ;
+    pn:placeNameOf ex:property-x ;
+    dcterms:provenance "The name Haunted House was assigned to this Place informally in the 1990 as children growing up near the house believed an apparition of a headless man resided there. The State officially recognised this name on Halloween in 1999."@en ;
+    addr:hasLifecycleStage [
+        time:hasTime [
+            time:hasBeginning [ time:inXSDgYear "1993"^^xsd:gYear ] ;
+            time:hasEnd [ time:inXSDDate "1999-10-31"^^xsd:date ] ;
+        ] ;
+        dcterms:type isov2:proposed ;
+    ] ,
+    [
+        time:hasTime [
+            time:hasBeginning [ time:inXSDDate "1999-10-31"^^xsd:date ] ;
+        ] ;
+        dcterms:type isov2:current ;
+        pn:wasNamedBy ex:qld-state-government ;
+        dcterms:source "http://example.com/press-releases/minister-names-haounted-house"^^xsd:anyURI
+    ]
+.
+
+ex:property-x
+    a pn:Place ;
+    geo:hasGeometry [
+        geo:asWKT "POINT(153.08468369 -27.32703398)"^^geo:wktLiteral
+    ] ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Location is not a property of the <code>PlaceName</code>, which is just a fancy label, but of the object labeled - the <code>Place</code>.</p>
+</li>
+<li>
+<p>The current state of the <code>PlaceName</code> "current" (synonym for "gazetted") can be determined by looking for the <code>LifecycleStage</code> whose temporal footprint we are within (i.e. the one stated before not and not yet ended)</p>
+</li>
+<li>
+<p>Notes on the initiation of the <code>LifecycleStage</code> "current", i.e. the assigning of the <code>PlaceName</code> as official, are included in that <code>LifecycleStage</code> - <code>wasNamedBy</code> and <code>source</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_haunted_house_address"><a class="anchor" href="#_haunted_house_address"></a>2.1.2. Haunted House Address</h4>
+<div class="paragraph">
+<p>If the Haunted House modelled above had the address:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>20 Oxford Place
+Shorncliffe, QLD 4017</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Its parts and relation to an <code>AddressableObject</code> - the same object as the <code>Place</code> above - could be modelled like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:20-oxford-place
+    a addr:Address ;
+    addr:hasAddressComponent
+        [
+            dcterms:type isov1:numberFirst ;
+            addr:hasValueText "20" ;
+            addr:hasValue 20
+        ] ,
+        [
+            dcterms:type isov1:streetLocality ;
+            addr:hasValueText "Oxford Place" ;
+            addr:hasValue &lt;https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD140492&gt;
+        ] ,
+        [
+            dcterms:type isov1:locality ;
+            addr:hasValueText "Shorncliffe" ;
+            addr:hasValue &lt;https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03&gt;
+        ] ,
+        [
+            dcterms:type isov1:administrativeArea ;
+            addr:hasValueText "Queensland" ;
+            addr:hasValue &lt;https://linked.data.gov.au/dataset/asgsed3/STE/3&gt;
+        ] ,
+        [
+            dcterms:type isov1:postcode ;
+            addr:hasValueText "4017" ;
+            addr:hasValue 4017
+        ] ;
+    addr:hasGeocode [
+            dcterms:type &lt;https://linked.data.gov.au/dataset/gnaf/code/geocodeType/PC&gt; ;  # Property Centroid
+            geo:asWKT "POINT(153.08468369 -27.32703398)"^^geo:wktLiteral
+        ] ;
+    addr:isAddressFor ex:property-x ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the <code>Address</code> here is located with a relation to a <code>Geocode</code> which has the same value as the geometry of the <code>Place</code> in the above modelling. It&#8217;s the same value as it&#8217;s the Property Centroid of the <code>Place</code>/<code>AddressableObject</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_a_placename_as_an_addresscomponent"><a class="anchor" href="#_a_placename_as_an_addresscomponent"></a>2.1.3. A PlaceName as an AddressComponent</h4>
+<div class="paragraph">
+<p>To model the Place Name of "Haounted House" as a componet of the above modelled property&#8217;s <code>Address</code>, a <code>placeName</code> component may be used like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:20-oxford-place
+    a addr:Address ;
+    addr:hasAddressComponent
+        [
+            dcterms:type isov1:placeName ;
+            addr:hasValueText "Haunted House" ;
+            addr:hasValue "Haunted House"@en ;
+            dcterms:provenance "The name Haunted House was assigned to this Place informally in the 1990 as children growing up near the house believed an apparition of a headless man resided there. The State officially recognised this name on Halloween in 1999."@en ;
+        ] ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the property <code>placeNameOf</code> linking the <code>PlaceName</code> to the <code>Place</code> can be inferred since the <code>placeName</code> type <code>AddressComponent</code> here is for an <code>Address</code> that is for an <code>AddressableObject</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>the inference axiom is: <code>pn:placeNameOf owl:PropertyChainAxiom ( ^addr:hasAddressComponent addr:isAddressFor )</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_combined_modelling"><a class="anchor" href="#_combined_modelling"></a>2.1.4. Combined Modelling</h4>
+<div class="paragraph">
+<p>The mdoelling of the previous three subsections is combined in the file <a href="https://github.com/nicholascar/qsi-supermodel/qsi-placenames/oxford-place-haunted.ttl">oxford-place-haunted.ttl</a> in this model&#8217;s code repository.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_place_name_categorisation"><a class="anchor" href="#_place_name_categorisation"></a>2.2. Place Name Categorisation</h3>
+<div class="paragraph">
+<p>Previous modelling of Place Names in the <a href="https://linked.data.gov.au/def/placenames">Place Names Ontology</a> sought to categorise instances of the <code>Place</code> class with the <a href="https://linked.data.gov.au/def/placenames-categories">Place Names Categories</a> vocabulary. This model does not follow that categorisation and instead uses the Place Names Categories vocabulary to categorise the <em>Place Names</em>, not the <em>Places</em>.</p>
+</div>
+<div class="paragraph">
+<p>The corollory of this is that all Concepts within the Place Names Categories vocabulary are narrower Concepts of the <a href="https://nicholascar.com/anz-nat-addr-model-candidate/model.html#_address_component_types_vocabulary">Address Component Types vocabulary</a>'s `placeName' Concept.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-24 11:26:59 UTC
+Last updated 2022-06-24 11:45:58 UTC
 </div>
 </div>
 </body>

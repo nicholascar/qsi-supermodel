@@ -443,30 +443,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_metadata">1. Metadata</a></li>
-<li><a href="#_introduction">2. Introduction</a>
-<ul class="sectlevel2">
-<li><a href="#_viewpoints">2.1. <em>Viewpoints</em></a></li>
-</ul>
-</li>
-<li><a href="#_introduction_2">3. Introduction</a>
-<ul class="sectlevel2">
-<li><a href="#_existing_supermodels">3.1. Existing Supermodels</a></li>
-</ul>
-</li>
-<li><a href="#_requirements">4. Requirements</a></li>
+<li><a href="#_components">2. Components</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div id="NOTE" class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>This is an early draft document for the Queensland Department of Resources' 'Cadastre &amp; Address Data Modelling Project'. It is not currently for wide release.</p>
-</div>
-</div>
-</div>
 <div class="paragraph">
 <p>This document is both the front page of the Queensland Land Information Supermodel&#8217;s repository and a <em>Guidance document</em> and introduces all the other elements of this Supermodel.</p>
 </div>
@@ -499,7 +482,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2022-03-20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-24</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
@@ -522,90 +505,61 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_introduction">2. Introduction</h2>
+<h2 id="_components">2. Components</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>A Supermodel is an integrated, multi-part data model following a pattern implemented specifically for a particlar scenario. This Supermodel is implemented for the Queensland Land Information Implementation Testing project, started in April, 2022.</p>
-</div>
-<div class="sect2">
-<h3 id="_viewpoints">2.1. <em>Viewpoints</em></h3>
-<div class="paragraph">
-<p>This Supermodel is described in series of resources that are formulated according to the Reference Model for Open Distributed Processing (RM-ODP) <a href="#RMODP">[RMODP]</a>. Each resource presents a <em>viewpoint</em> which gives a different perspective on the scenario.</p>
-</div>
-<div class="paragraph">
-<p>The main resources within this Supermodel and the RM-ODP <em>viewpoint</em> for which they are defined are:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
-<p><a href="https://nicholascar.com/qsi-supermodel/supermodel.html">Model Document</a> - the <em>Information Viewpoint</em></p>
+<p><a href="https://nicholascar.com/qsi-supermodel/supermodel.html">Specification</a></p>
 </li>
 <li>
-<p><a href="https://nicholascar.com/qsi-supermodel/requirements.html">Requirements listing</a> - part of the <em>Enterprise Viewpoint</em></p>
+<p><a href="https://nicholascar.com/qsi-supermodel/backbone/model.ttl">Backbone Model</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>machine-readable version</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>&#8230;&#8203;</p>
+<p>w3id.org/profile/anz-address[Address Model]</p>
+<div class="ulist">
+<ul>
+<li>
+<p>external to this Supermodel</p>
 </li>
-</ol>
+</ul>
 </div>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">ID</th>
-<th class="tableblock halign-left valign-top">Req Text</th>
-<th class="tableblock halign-left valign-top">Relevant Model Elements</th>
-<th class="tableblock halign-left valign-top">Canonical Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R01</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Blah blah</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">? ? ?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xxx</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R02</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Blah blah</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">? ? ?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">xxx</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R04</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The solution will utilize a new database having been migrated from the existing Ingress DB&#8217;s used for Cadastre and addressing</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+</li>
+<li>
+<p><a href="https://w3id.org/profile/qsi-placenames">Place Names Model</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>defined within this Supermodel</p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p><a href="https://nicholascar.com/qsi-supermodel/supermodel.html#_qsi_cadastral_model">Cadastre Model</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>defined within this Supermodel</p>
+</li>
+</ul>
 </div>
+</li>
+</ul>
 </div>
-<div class="sect1">
-<h2 id="_introduction_2">3. Introduction</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_existing_supermodels">3.1. Existing Supermodels</h3>
-
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_requirements">4. Requirements</h2>
-<div class="sectionbody">
-
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-24 11:26:59 UTC
+Last updated 2022-06-24 11:45:58 UTC
 </div>
 </div>
 </body>
