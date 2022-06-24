@@ -23,13 +23,13 @@ This document is both the front page of the Queensland Land Information Supermod
 == Components
 
 * https://nicholascar.com/qsi-supermodel/supermodel.html[Specification]
-* https://nicholascar.com/qsi-supermodel/backbone/backbone.ttl[Backbone Model]
+* https://nicholascar.com/qsi-supermodel/backbone/model.ttl[Backbone Model]
 ** machine-readable version
-* https://nicholascar.com/anz-nat-addr-model-candidate/model.html[Address Component Model]
+* w3id.org/profile/anz-address[Address Model]
 ** external to this Supermodel
-* https://nicholascar.com/qsi-supermodel/supermodel.html#_qsi_place_names_model[Place Names Component Model]
+* https://w3id.org/profile/qsi-placenames[Place Names Model]
 ** defined within this Supermodel
-* https://nicholascar.com/qsi-supermodel/supermodel.html#_qsi_cadastral_model[Cadastre Component Model]
+* https://nicholascar.com/qsi-supermodel/supermodel.html#_qsi_cadastral_model[Cadastre Model]
 ** defined within this Supermodel
 
 // == Introduction
