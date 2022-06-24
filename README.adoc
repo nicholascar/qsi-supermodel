@@ -3,11 +3,6 @@
 :table-stripes: even
 :sectnums:
 
-[[NOTE]]
-====
-This is an early draft document for the Queensland Department of Resources' 'Cadastre & Address Data Modelling Project'. It is not currently for wide release.
-====
-
 This document is both the front page of the Queensland Land Information Supermodel's repository and a _Guidance document_ and introduces all the other elements of this Supermodel.
 
 == Metadata
@@ -18,44 +13,56 @@ This document is both the front page of the Queensland Land Information Supermod
 |**Title** | QSI Supermodel Guidance
 |**Description** |This document is both the front page of the Queensland Land Information Supermodel's repository and a _Guidance document_ and introduces all the other elements of this Supermodel.
 |**Created** | 2022-03-13
-|**Modified** | 2022-03-20
+|**Modified** | 2022-06-24
 |**Issued** | 0000-00-00
 |**Creator** | Consortium through https://frontiersi.com.au[Frontier SI]
 |**Publisher** | -
 |**License** | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)] -- likely but not ratified yet
 |===
 
-== Introduction
+== Components
 
-A Supermodel is an integrated, multi-part data model following a pattern implemented specifically for a particlar scenario. This Supermodel is implemented for the Queensland Land Information Implementation Testing project, started in April, 2022.
+* https://nicholascar.com/qsi-supermodel/supermodel.html[Specification]
+* https://nicholascar.com/qsi-supermodel/backbone/backbone.ttl[Backbone Model]
+** machine-readable version
+* https://nicholascar.com/anz-nat-addr-model-candidate/model.html[Address Component Model]
+** external to this Supermodel
+* https://nicholascar.com/qsi-supermodel/supermodel.html#_qsi_place_names_model[Place Names Component Model]
+** defined within this Supermodel
+* https://nicholascar.com/qsi-supermodel/supermodel.html#_qsi_cadastral_model[Cadastre Component Model]
+** defined within this Supermodel
 
-=== _Viewpoints_
+// == Introduction
 
-This Supermodel is described in series of resources that are formulated according to the Reference Model for Open Distributed Processing (RM-ODP) <<RMODP>>. Each resource presents a _viewpoint_ which gives a different perspective on the scenario.
+// A Supermodel is an integrated, multi-part data model following a pattern implemented specifically for a particlar scenario. This Supermodel is implemented for the Queensland Land Information Implementation Testing project, started in April, 2022.
 
-The main resources within this Supermodel and the RM-ODP _viewpoint_ for which they are defined are:
+// === _Viewpoints_
 
-. https://nicholascar.com/qsi-supermodel/supermodel.html[Model Document] - the _Information Viewpoint_
-. https://nicholascar.com/qsi-supermodel/requirements.html[Requirements listing] - part of the _Enterprise Viewpoint_
-. ...
+// This Supermodel is described in series of resources that are formulated according to the Reference Model for Open Distributed Processing (RM-ODP) <<RMODP>>. Each resource presents a _viewpoint_ which gives a different perspective on the scenario.
+
+// The main resources within this Supermodel and the RM-ODP _viewpoint_ for which they are defined are:
+
+// . https://nicholascar.com/qsi-supermodel/supermodel.html[Model Document] - the _Information Viewpoint_
+// . https://nicholascar.com/qsi-supermodel/requirements.html[Requirements listing] - part of the _Enterprise Viewpoint_
+// . ...
 
 
 
 
 
 
-|===
-|ID | Req Text | Relevant Model Elements | Canonical Example
+// |===
+// |ID | Req Text | Relevant Model Elements | Canonical Example
 
-| R01 | Blah blah | ? ? ? | xxx
-| R02 | Blah blah | ? ? ? | xxx
-| R04 | The solution will utilize a new database having been migrated from the existing Ingress DB's used for Cadastre and addressing | |
-|===
+// | R01 | Blah blah | ? ? ? | xxx
+// | R02 | Blah blah | ? ? ? | xxx
+// | R04 | The solution will utilize a new database having been migrated from the existing Ingress DB's used for Cadastre and addressing | |
+// |===
 
-== Introduction
+// == Introduction
 
-=== Existing Supermodels
+// === Existing Supermodels
 
-== Requirements
+// == Requirements
 
 
