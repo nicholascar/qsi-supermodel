@@ -466,6 +466,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
+<div class="imageblock center text-center">
+<div class="content">
+<img src="https://nicholascar.com/qsi-supermodel/images/models.png" alt="models" width="700">
+</div>
+</div>
+<div class="imageblock center text-center">
+<div class="content">
+<img src="https://nicholascar.com/qsi-supermodel/images/level-2.png" alt="level 2" width="500">
+</div>
+</div>
 <div class="paragraph">
 <p>This is an overarching model - a Supermodel - used to integrate multiple, individual, models together for use within a particular scenario.</p>
 </div>
@@ -517,7 +527,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </li>
 <li>
-<p><code>FeatureLabel</code> - Annotations applied to a <code>Feature</code>. Specialised kinds of FeatureLabel are expected to be used, such as <code>Address</code> or <code>PlaceName</code></p>
+<p><code>FeatureLabel</code> - An annotation applied to a <code>Feature</code>. Specialised kinds of FeatureLabel are expected to be used, such as <code>Address</code> or <code>PlaceName</code></p>
 <div class="ulist">
 <ul>
 <li>
@@ -540,6 +550,48 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="title">Figure 1. Key for OWL diagram figures</div>
 </div>
+<div class="paragraph">
+<p>OWL modelling and the RDF data that is made according to it make extensive use of namespaces which are globally-unique names based on Internet web addresses. The following namespaces are used in this document:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 50%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Prefix</th>
+<th class="tableblock halign-left valign-top">Namespace</th>
+<th class="tableblock halign-left valign-top">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bb</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://w3id.org/profile/qsi-supermodel/backbone/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The namespace for this Supermodel&#8217;s Backbone Model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://example.com/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An example namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://www.opengis.net/ont/geosparql#</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The GeoSAPRQL Ontology&#8217;s namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdfs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://www.w3.org/2000/01/rdf-schema#</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The namespace of the fundamental RDF Schema model used for OWL mododelling</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>In its definion section below, <a href="#FeatureLabel">Feature Label</a> is indicated as beeing authoritifely identified with the prefixed IRI (web identifier) <code>bb:FeatureLabel</code> which, expanded using the table above is <code><a href="https://w3id.org/profile/qsi-supermodel/backbone/FeatureLabel" class="bare">https://w3id.org/profile/qsi-supermodel/backbone/FeatureLabel</a></code> which can be clicked on to retieve it&#8217;s formal definition.</p>
+</div>
 </div>
 </div>
 </div>
@@ -547,7 +599,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_models"><a class="anchor" href="#_models"></a>2. Models</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This Supermodel implements a "Backbone Model" which contains central elements from the various Component Models and acts as the integrative model between them The Backbone Model and Component Models together make the Supermodel.</p>
+<p>This Supermodel implements a "Backbone Model" which contains central elements from the various Component Models and some additional modelling "glue" to allow it to act as the integrative model between them. The Backbone Model and Component Models together make the Supermodel.</p>
 </div>
 <div id="fig-models" class="imageblock">
 <div class="content">
@@ -558,7 +610,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_backbone_model"><a class="anchor" href="#_backbone_model"></a>2.1. Backbone Model</h3>
 <div class="paragraph">
-<p>The Backbone Model for this Queensland Spatial Information scenario overviewed in <a href="#fig-backbone">Figure 3</a>. The formal characterisation of the model in OWL is given in the file <a href="https://nicholascar.com/qsi-supermodel/backbone.ttl">backbone.ttl</a>.</p>
+<p>The Backbone Model for this Queensland Spatial Information scenario overviewed in <a href="#fig-backbone">Figure 3</a>. The elements of the Backbone Model are described next and the formal characterisation of the model in OWL is given in the machein-readable file <a href="https://nicholascar.com/qsi-supermodel/backbone.ttl">backbone.ttl</a>.</p>
 </div>
 <div id="fig-backbone" class="imageblock">
 <div class="content">
@@ -567,7 +619,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Figure 3. An OWL diagram of the Backbone Model overview. Uncertain objects are shown in light red.</div>
 </div>
 <div class="paragraph">
-<p>Figure 2 indicates two main conceptual domains (the yellow and blue) centered on <code>Feature Labels</code> (defined here) and <code>geo:Feature</code> s which are "Anything spatial (being or having a shape, position or an extent)." <a href="#GEO">[GEO]</a>. Feature Labels are any form of identifying information assigned to a Feature.</p>
+<p>Figure 2 indicates two main conceptual domains (the yellow and blue) centered on <code>Feature Labels</code> (defined here) and <code>geo:Feature</code> s which are "Anything spatial (being or having a shape, position or an extent)" <a href="#GEO">[GEO]</a>. Feature Labels are any form of identifying information assigned to a Feature <a href="#xxx">[xxx]</a>.</p>
 </div>
 <div class="paragraph">
 <p>The class hierharchy expressed in this Backbone Model (with sub class of arrows) indicates that:</p>
@@ -575,18 +627,138 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>Addresses, Administrative Areas and perhaps Titles are all forms of Feature Labels</p>
+<p><code>Address</code>, <code>AdministrativeArea</code> and perhaps <code>Title`</code> are all specialised forms of <code>FeatureLabel</code></p>
 </li>
 <li>
-<p>Place Names are a form of Address (a very simple one!)</p>
+<p><code>PlaceName</code> is a form of <code>Address</code> (a very simple one!)</p>
 </li>
 <li>
-<p>Places are Addressable Objects and Addressable Objects and Parcels are types of Feature</p>
+<p><code>Places</code> are a specialised form of <code>AddressableObject</code> and <code>AddressableObject</code> and <code>Parcel</code>, and others, are speciali types of <code>geo:Feature</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>The various Component Models (next) use these classes of object and imlplement many more specilised forms of them.</p>
+</div>
+<div class="sect3">
+<h4 id="_classes"><a class="anchor" href="#_classes"></a>2.1.1. Classes</h4>
+<div class="paragraph">
+<p>This Backbone Model only defines one class of object not already defined in the various Component models: <code>FeatureLabel</code>.</p>
+</div>
+<div class="sect4">
+<h5 id="FeatureLabel"><a class="anchor" href="#FeatureLabel"></a>Feature Label</h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bb:FeatureLabel</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An annotation applied to a <code>Feature</code>. Specialised kinds of FeatureLabel are expected to be used, such as <code>Address</code> or <code>PlaceName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/profile/qsi-supermodel/backbone">SQI Supermodel Backbone Model</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycle</code> class</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isLabelFor">is label for</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># The Label "Mount Doom" is applied to Feature X
+ex:fl-01
+    a bb:FeatureLabel ;
+    rdfs:label "Mount Doom" ;
+    bb:isLabelFor ex:feature-x ;
+.
+
+ex:feature-x
+    a geo:Feature ;
+    ex:category ex:mountain ;
+.</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_properties"><a class="anchor" href="#_properties"></a>2.1.2. Properties</h4>
+<div class="paragraph">
+<p>This Backbone Model only defines one property not already defined in the various Component models: <code>isLabelFor</code>.</p>
+</div>
+<div class="sect4">
+<h5 id="_is_label_for"><a class="anchor" href="#_is_label_for"></a>is label for</h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bb:isLabelFor</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is label for</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates an an object that a <a href="#FeatureLabel"><code>FeatureLabel</code></a> is an annotation for</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://w3id.org/profile/qsi-supermodel/backbone">SQI Supermodel Backbone Model</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sub property of</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdfs:label</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#FeatureLabel"><code>FeatureLabel</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:Feature</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>see the example for <a href="#FeatureLabel">Feature Label</a></em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -744,7 +916,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-24 04:17:43 UTC
+Last updated 2022-06-24 05:03:49 UTC
 </div>
 </div>
 </body>
