@@ -25,7 +25,7 @@ This document is both the front page of the Queensland Land Information Supermod
 * https://nicholascar.com/qsi-supermodel/supermodel.html[Specification]
 * https://nicholascar.com/qsi-supermodel/backbone/model.ttl[Backbone Model]
 ** machine-readable version
-* w3id.org/profile/anz-address[Address Model]
+* https://w3id.org/profile/anz-address[Address Model]
 ** external to this Supermodel
 * https://w3id.org/profile/qsi-placenames[Place Names Model]
 ** defined within this Supermodel
