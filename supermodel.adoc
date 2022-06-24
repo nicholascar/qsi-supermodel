@@ -18,9 +18,22 @@ The Supermodel does this by implementing a <<Backbone Model>> that is an abstrac
 
 === Modelling Methods
 
-All the Component Models and the Backbone Model given here are implemented using the Web Ontology Language known as OWL <<OWL>>. OWL is a well used, standardised, powerful, formal, conceptual modelling language. Use of OWL creates data models that data can be validated against in automated ways, see <<Data Validation>>.
+All the Component Models and the Backbone Model given here are implemented using the Web Ontology Language known as OWL <<OWL>>. OWL is a well used, standardised, powerful, formal, modelling language. Use of OWL creates data models that can be visualised and also that data can be validated against in automated ways, see <<Annex A: Data Validation>>.
 
-OWL models are diagrams that are similar to UML diagrams and use elements from the following key.
+OWL modelling is a set-theoretic modelling language which means using it involves placing things - concepts, digital representations of real-world objects - into _classes_. Objects in the classes are all similar in some way: perhaps they all have similar _properties_.
+
+In this Supermodel, some fundamental classes are used for all things within scope, such as:
+
+* `Feature` - Anything spatial (being or having a shape, position or an extent)
+** From the GeoSPARQL 1.1 Ontology <<GEO>>
+* `Geometry` - A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)
+** From <<GEO>>
+* `FeatureLabel` - Annotations applied to a `Feature`. Specialised kinds of FeatureLabel are expected to be used, such as `Address` or `PlaceName`
+** From this Supermodel's <<Backbone Model>>
+
+Specialised forms of `Feature` are used, such as `AddressableObject`, `Parcel` and so on. A `Geocode` is a specialised form of a `Geometry`.
+
+OWL models visualisation is by diagrams that are similar to UML diagrams and use elements from the following key.
 
 [id=fig-key]
 .Key for OWL diagram figures
@@ -31,18 +44,18 @@ image::images/key.png[]
 This Supermodel implements a "Backbone Model" which contains central elements from the various Component Models and acts as the integrative model between them The Backbone Model and Component Models together make the Supermodel.
 
 [id=fig-models]
-.The various Models of this Supermodel. The Administrative Areas model has not been detailed to date.
+.An informal diagram the various Models of this Supermodel. The Administrative Areas model has not been detailed to date.
 image::images/models.png[]
 
 === Backbone Model
 
-The Backbone Model for this Queensland Spatial Information scenario overviewed in <<#fig-backbone, Figure 3>>. The formal characterisation of the model in OWL is given in the file [backbone.ttl]
+The Backbone Model for this Queensland Spatial Information scenario overviewed in <<#fig-backbone, Figure 3>>. The formal characterisation of the model in OWL is given in the file https://nicholascar.com/qsi-supermodel/backbone.ttl[backbone.ttl].
 
 [id=fig-backbone]
-.Backbone Model overview. Uncertain objects are shown in light red.
+.An OWL diagram of the Backbone Model overview. Uncertain objects are shown in light red.
 image::images/backbone.png[]
 
-Figure 2 indicates two main conceptual domains (the yellow and blue) centered on `Feature Labels` (defined here) and `geo:Feature` s which are "Anything spatial (being or having a shape, position or an extent)." <<GEOS>>. Feature Labels are any form of identifying information assigned to a Feature.
+Figure 2 indicates two main conceptual domains (the yellow and blue) centered on `Feature Labels` (defined here) and `geo:Feature` s which are "Anything spatial (being or having a shape, position or an extent)." <<GEO>>. Feature Labels are any form of identifying information assigned to a Feature.
 
 The class hierharchy expressed in this Backbone Model (with sub class of arrows) indicates that:
 
@@ -125,8 +138,12 @@ image::images/level-3-overview.png[]
 
 ==== Data Cataloguing
 
+:!sectnums:
+
+== Annex A: Data Validation
 
 == Bibliography
 
-* [[GEOS]] [GEOS] Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data_, OGC® Implementation Specification (2022). https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html 
+* [[GEO]] [GEO] Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data_, OGC® Implementation Specification (2022). https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html 
+
 * [[OWL]] [OWL] World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendaton (11 December 2012). https://www.w3.org/TR/owl2-overview/
