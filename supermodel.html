@@ -580,6 +580,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">The namespace for this Supermodel&#8217;s Backbone Model</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cad</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://w3id.org/profile/qsi-supermodel/cadastre/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The namespace for this Supermodel&#8217;s Cadastre Component Model</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ex</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://example.com/</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">An example namespace</p></td>
@@ -794,7 +799,7 @@ ex:feature-x
 <div class="sect3">
 <h4 id="_qsi_place_names_model"><a class="anchor" href="#_qsi_place_names_model"></a>2.3.2. QSI Place Names Model</h4>
 <div class="paragraph">
-<p>The model used for Place Names within this Supermodel is both a profile of the <a href="#_anz_national_address_model">ANZ National Address Model</a> and the <a href="https://linked.data.gov.au/def/placenames">Place Names Ontology</a> made for Australian government. This profile contains both restrictions on the Address Model&#8217;s element (certain Address Components cannot be used) and extensions from the Place Names Ontology (Place Names require specialised properties not relevant for normal Addresses).</p>
+<p>The model used for Place Names within this Supermodel is a profile of both the <a href="#_anz_national_address_model">ANZ National Address Model</a> and the <a href="https://linked.data.gov.au/def/placenames">Place Names Ontology</a> made for Australian government. This profile shows howt o model Place Names as Addresses with certain Address Components and Place Name ontology properties.</p>
 </div>
 <div class="paragraph">
 <p>It is defined within an Annex of this Spermodel and is available online separately at:</p>
@@ -805,32 +810,106 @@ ex:feature-x
 </div>
 <div class="sect3">
 <h4 id="_qsi_cadastral_model"><a class="anchor" href="#_qsi_cadastral_model"></a>2.3.3. QSI Cadastral Model</h4>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
 <div class="paragraph">
-<p>Introduce the Supermodel Concept</p>
+<p>The Cadastral Model used within this Supermodel is only a class heirarchy of cadastral objects. No properties are yet defined for these classes.</p>
+</div>
+<div class="paragraph">
+<p>The class hierarchy is as follows, with nested objects being subclasses of their parents:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Scenario explanation</p>
+<p><code>geo:FeatureCollection</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>cad:ParcelCollection</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>cad:Property</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>cad:TitledProperty</code></p>
 </li>
 <li>
-<p>General Supermodel information</p>
+<p><code>cad:ValuationProperty</code></p>
 </li>
 <li>
-<p>List other preamble sections e.g. Terms &amp; Defs</p>
+<p><code>cad:RuralProperty</code></p>
 </li>
 </ul>
 </div>
-</td>
-</tr>
-</table>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>geo:Feature</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>cad:Parcel</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>cad:BaseParcel</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>cad:RoadParcel</code></p>
+</li>
+<li>
+<p><code>cad:WaterParcel</code></p>
+</li>
+<li>
+<p><code>cad:OtherParcel</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>cad:IntersectionParcel</code></p>
+</li>
+<li>
+<p><code>cad:UnlinkedParcel</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>cad:Easement</code></p>
+</li>
+<li>
+<p><code>cad:BaseParcel</code></p>
+</li>
+<li>
+<p><code>cad:StrataParcel</code></p>
+</li>
+<li>
+<p><code>cad:Building</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This class hierarchy is shown graphically in the figure below:</p>
+</div>
+<div id="fig-cadastre" class="imageblock">
+<div class="content">
+<img src="https://nicholascar.com/qsi-supermodel/images/cadastre.png" alt="cadastre">
+</div>
+<div class="title">Figure 4. The Cadastre Component Model</div>
 </div>
 </div>
 </div>
@@ -869,7 +948,7 @@ ex:feature-x
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-24 11:04:25 UTC
+Last updated 2022-06-24 11:26:59 UTC
 </div>
 </div>
 </body>
