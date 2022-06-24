@@ -458,7 +458,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_model_structure">3.1. Model Structure</a></li>
 </ul>
 </li>
-<li><a href="#_bibliography">4. Bibliography</a></li>
+<li><a href="#_annex_a_data_validation">Annex A: Data Validation</a></li>
+<li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
 </div>
@@ -485,10 +486,53 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_modelling_methods"><a class="anchor" href="#_modelling_methods"></a>1.1. Modelling Methods</h3>
 <div class="paragraph">
-<p>All the Component Models and the Backbone Model given here are implemented using the Web Ontology Language known as OWL <a href="#OWL">[OWL]</a>. OWL is a well used, standardised, powerful, formal, conceptual modelling language. Use of OWL creates data models that data can be validated against in automated ways, see <a href="#Data Validation">[Data Validation]</a>.</p>
+<p>All the Component Models and the Backbone Model given here are implemented using the Web Ontology Language known as OWL <a href="#OWL">[OWL]</a>. OWL is a well used, standardised, powerful, formal, modelling language. Use of OWL creates data models that can be visualised and also that data can be validated against in automated ways, see <a href="#_annex_a_data_validation">Annex A: Data Validation</a>.</p>
 </div>
 <div class="paragraph">
-<p>OWL models are diagrams that are similar to UML diagrams and use elements from the following key.</p>
+<p>OWL modelling is a set-theoretic modelling language which means using it involves placing things - concepts, digital representations of real-world objects - into <em>classes</em>. Objects in the classes are all similar in some way: perhaps they all have similar <em>properties</em>.</p>
+</div>
+<div class="paragraph">
+<p>In this Supermodel, some fundamental classes are used for all things within scope, such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Feature</code> - Anything spatial (being or having a shape, position or an extent)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>From the GeoSPARQL 1.1 Ontology <a href="#GEO">[GEO]</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>Geometry</code> - A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>From <a href="#GEO">[GEO]</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>FeatureLabel</code> - Annotations applied to a <code>Feature</code>. Specialised kinds of FeatureLabel are expected to be used, such as <code>Address</code> or <code>PlaceName</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>From this Supermodel&#8217;s <a href="#_backbone_model">Backbone Model</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Specialised forms of <code>Feature</code> are used, such as <code>AddressableObject</code>, <code>Parcel</code> and so on. A <code>Geocode</code> is a specialised form of a <code>Geometry</code>.</p>
+</div>
+<div class="paragraph">
+<p>OWL models visualisation is by diagrams that are similar to UML diagrams and use elements from the following key.</p>
 </div>
 <div id="fig-key" class="imageblock">
 <div class="content">
@@ -509,21 +553,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <img src="https://nicholascar.com/qsi-supermodel/images/models.png" alt="models">
 </div>
-<div class="title">Figure 2. The various Models of this Supermodel. The Administrative Areas model has not been detailed to date.</div>
+<div class="title">Figure 2. An informal diagram the various Models of this Supermodel. The Administrative Areas model has not been detailed to date.</div>
 </div>
 <div class="sect2">
 <h3 id="_backbone_model"><a class="anchor" href="#_backbone_model"></a>2.1. Backbone Model</h3>
 <div class="paragraph">
-<p>The Backbone Model for this Queensland Spatial Information scenario overviewed in <a href="#fig-backbone">Figure 3</a>. The formal characterisation of the model in OWL is given in the file [backbone.ttl]</p>
+<p>The Backbone Model for this Queensland Spatial Information scenario overviewed in <a href="#fig-backbone">Figure 3</a>. The formal characterisation of the model in OWL is given in the file <a href="https://nicholascar.com/qsi-supermodel/backbone.ttl">backbone.ttl</a>.</p>
 </div>
 <div id="fig-backbone" class="imageblock">
 <div class="content">
 <img src="https://nicholascar.com/qsi-supermodel/images/backbone.png" alt="backbone">
 </div>
-<div class="title">Figure 3. Backbone Model overview. Uncertain objects are shown in light red.</div>
+<div class="title">Figure 3. An OWL diagram of the Backbone Model overview. Uncertain objects are shown in light red.</div>
 </div>
 <div class="paragraph">
-<p>Figure 2 indicates two main conceptual domains (the yellow and blue) centered on <code>Feature Labels</code> (defined here) and <code>geo:Feature</code> s which are "Anything spatial (being or having a shape, position or an extent)." <a href="#GEOS">[GEOS]</a>. Feature Labels are any form of identifying information assigned to a Feature.</p>
+<p>Figure 2 indicates two main conceptual domains (the yellow and blue) centered on <code>Feature Labels</code> (defined here) and <code>geo:Feature</code> s which are "Anything spatial (being or having a shape, position or an extent)." <a href="#GEO">[GEO]</a>. Feature Labels are any form of identifying information assigned to a Feature.</p>
 </div>
 <div class="paragraph">
 <p>The class hierharchy expressed in this Backbone Model (with sub class of arrows) indicates that:</p>
@@ -677,12 +721,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_bibliography"><a class="anchor" href="#_bibliography"></a>4. Bibliography</h2>
+<h2 id="_annex_a_data_validation"><a class="anchor" href="#_annex_a_data_validation"></a>Annex A: Data Validation</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bibliography"><a class="anchor" href="#_bibliography"></a>Bibliography</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a id="GEOS"></a> [GEOS] Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data</em>, OGC® Implementation Specification (2022). <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html" class="bare">https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html</a></p>
+<p><a id="GEO"></a> [GEO] Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data</em>, OGC® Implementation Specification (2022). <a href="https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html" class="bare">https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html</a></p>
 </li>
 <li>
 <p><a id="OWL"></a> [OWL] World Wide Web Consortium, <em>OWL 2 Web Ontology Language Document Overview (Second Edition)</em>, W3C Recommendaton (11 December 2012). <a href="https://www.w3.org/TR/owl2-overview/" class="bare">https://www.w3.org/TR/owl2-overview/</a></p>
@@ -694,7 +744,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-14 23:58:38 UTC
+Last updated 2022-06-24 04:17:43 UTC
 </div>
 </div>
 </body>
