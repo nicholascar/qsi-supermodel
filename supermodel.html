@@ -449,16 +449,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_models">2. Models</a>
 <ul class="sectlevel2">
-<li><a href="#_backbone_model">2.1. Backbone Model</a></li>
-<li><a href="#_component_models">2.2. Component Models</a></li>
+<li><a href="#_supermodel">2.1. Supermodel</a></li>
+<li><a href="#_backbone_model">2.2. Backbone Model</a>
+<ul class="sectlevel3">
+<li><a href="#_classes">2.2.1. Classes</a></li>
+<li><a href="#_properties">2.2.2. Properties</a></li>
 </ul>
 </li>
-<li><a href="#_model">3. Model</a>
-<ul class="sectlevel2">
-<li><a href="#_model_structure">3.1. Model Structure</a></li>
+<li><a href="#_component_models">2.3. Component Models</a>
+<ul class="sectlevel3">
+<li><a href="#_anz_national_address_model">2.3.1. ANZ National Address Model</a></li>
+<li><a href="#_qsi_place_names_model">2.3.2. QSI Place Names Model</a></li>
+<li><a href="#_qsi_cadastral_model">2.3.3. QSI Cadastral Model</a></li>
 </ul>
 </li>
-<li><a href="#_annex_a_data_validation">Annex A: Data Validation</a></li>
+</ul>
+</li>
+<li><a href="#_annex_a_validators">Annex A: Validators</a></li>
 <li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
@@ -496,7 +503,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_modelling_methods"><a class="anchor" href="#_modelling_methods"></a>1.1. Modelling Methods</h3>
 <div class="paragraph">
-<p>All the Component Models and the Backbone Model given here are implemented using the Web Ontology Language known as OWL <a href="#OWL">[OWL]</a>. OWL is a well used, standardised, powerful, formal, modelling language. Use of OWL creates data models that can be visualised and also that data can be validated against in automated ways, see <a href="#_annex_a_data_validation">Annex A: Data Validation</a>.</p>
+<p>All the Component Models and the Backbone Model given here are implemented using the Web Ontology Language known as OWL <a href="#OWL">[OWL]</a>. OWL is a well used, standardised, powerful, formal, modelling language. Use of OWL creates data models that can be visualised and also that data can be validated against in automated ways, see <a href="#_annex_a_validators">Annex A: Validators</a>.</p>
 </div>
 <div class="paragraph">
 <p>OWL modelling is a set-theoretic modelling language which means using it involves placing things - concepts, digital representations of real-world objects - into <em>classes</em>. Objects in the classes are all similar in some way: perhaps they all have similar <em>properties</em>.</p>
@@ -598,17 +605,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_models"><a class="anchor" href="#_models"></a>2. Models</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_supermodel"><a class="anchor" href="#_supermodel"></a>2.1. Supermodel</h3>
 <div class="paragraph">
-<p>This Supermodel implements a "Backbone Model" which contains central elements from the various Component Models and some additional modelling "glue" to allow it to act as the integrative model between them. The Backbone Model and Component Models together make the Supermodel.</p>
+<p>This Supermodel is the overall system that implements a <a href="#_backbone_model">Backbone Model</a> which contains central elements from the various <a href="#_component_models">Component Models</a> and some additional modelling "glue" to allow it to act as the integrative model between them. The Backbone Model, Component Models, model validators and this documentation together make the Supermodel.</p>
+</div>
+<div class="paragraph">
+<p>The following figure lists the various part models of this Supermodel.</p>
 </div>
 <div id="fig-models" class="imageblock">
 <div class="content">
 <img src="https://nicholascar.com/qsi-supermodel/images/models.png" alt="models">
 </div>
-<div class="title">Figure 2. An informal diagram the various Models of this Supermodel. The Administrative Areas model has not been detailed to date.</div>
+<div class="title">Figure 2. An informal diagram the part Models of this Supermodel. The Administrative Areas model is not yet defined.</div>
+</div>
+<div class="paragraph">
+<p>For technical use, the machine-readable versions of the Backbone Model and the Component Models can be combined and used as the total Supermodel.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_backbone_model"><a class="anchor" href="#_backbone_model"></a>2.1. Backbone Model</h3>
+<h3 id="_backbone_model"><a class="anchor" href="#_backbone_model"></a>2.2. Backbone Model</h3>
 <div class="paragraph">
 <p>The Backbone Model for this Queensland Spatial Information scenario overviewed in <a href="#fig-backbone">Figure 3</a>. The elements of the Backbone Model are described next and the formal characterisation of the model in OWL is given in the machein-readable file <a href="https://nicholascar.com/qsi-supermodel/backbone.ttl">backbone.ttl</a>.</p>
 </div>
@@ -641,7 +657,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The various Component Models (next) use these classes of object and imlplement many more specilised forms of them.</p>
 </div>
 <div class="sect3">
-<h4 id="_classes"><a class="anchor" href="#_classes"></a>2.1.1. Classes</h4>
+<h4 id="_classes"><a class="anchor" href="#_classes"></a>2.2.1. Classes</h4>
 <div class="paragraph">
 <p>This Backbone Model only defines one class of object not already defined in the various Component models: <code>FeatureLabel</code>.</p>
 </div>
@@ -706,7 +722,7 @@ ex:feature-x
 </div>
 </div>
 <div class="sect3">
-<h4 id="_properties"><a class="anchor" href="#_properties"></a>2.1.2. Properties</h4>
+<h4 id="_properties"><a class="anchor" href="#_properties"></a>2.2.2. Properties</h4>
 <div class="paragraph">
 <p>This Backbone Model only defines one property not already defined in the various Component models: <code>isLabelFor</code>.</p>
 </div>
@@ -762,13 +778,33 @@ ex:feature-x
 </div>
 </div>
 <div class="sect2">
-<h3 id="_component_models"><a class="anchor" href="#_component_models"></a>2.2. Component Models</h3>
+<h3 id="_component_models"><a class="anchor" href="#_component_models"></a>2.3. Component Models</h3>
 <div class="sect3">
-<h4 id="_anz_national_address_model"><a class="anchor" href="#_anz_national_address_model"></a>2.2.1. ANZ National Address Model</h4>
-
+<h4 id="_anz_national_address_model"><a class="anchor" href="#_anz_national_address_model"></a>2.3.1. ANZ National Address Model</h4>
+<div class="paragraph">
+<p>The ANZ National Address Model is a model that has bee defined externally to this Supermodel.</p>
+</div>
+<div class="paragraph">
+<p>It is available online at:</p>
+</div>
+<div class="paragraph">
+<p><strong><a href="https://w3id.org/profile/anz-address" class="bare">https://w3id.org/profile/anz-address</a></strong></p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_qsi_cadastral_model"><a class="anchor" href="#_qsi_cadastral_model"></a>2.2.2. QSI Cadastral Model</h4>
+<h4 id="_qsi_place_names_model"><a class="anchor" href="#_qsi_place_names_model"></a>2.3.2. QSI Place Names Model</h4>
+<div class="paragraph">
+<p>The model used for Place Names within this Supermodel is both a profile of the <a href="#_anz_national_address_model">ANZ National Address Model</a> and the <a href="https://linked.data.gov.au/def/placenames">Place Names Ontology</a> made for Australian government. This profile contains both restrictions on the Address Model&#8217;s element (certain Address Components cannot be used) and extensions from the Place Names Ontology (Place Names require specialised properties not relevant for normal Addresses).</p>
+</div>
+<div class="paragraph">
+<p>It is defined within an Annex of this Spermodel and is available online separately at:</p>
+</div>
+<div class="paragraph">
+<p><strong><a href="https://w3id.org/profile/qsi-placenames" class="bare">https://w3id.org/profile/qsi-placenames</a></strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_qsi_cadastral_model"><a class="anchor" href="#_qsi_cadastral_model"></a>2.3.3. QSI Cadastral Model</h4>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -801,101 +837,18 @@ ex:feature-x
 </div>
 </div>
 <div class="sect1">
-<h2 id="_model"><a class="anchor" href="#_model"></a>3. Model</h2>
+<h2 id="_annex_a_validators"><a class="anchor" href="#_annex_a_validators"></a>Annex A: Validators</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_model_structure"><a class="anchor" href="#_model_structure"></a>3.1. Model Structure</h3>
-<div class="sect3">
-<h4 id="_data_domains"><a class="anchor" href="#_data_domains"></a>3.1.1. Data Domains</h4>
-<div id="fig-level-1" class="imageblock">
-<div class="content">
-<img src="https://nicholascar.com/qsi-supermodel/images/level-1.png" alt="level 1">
-</div>
-<div class="title">Figure 4. Level 1</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_central_classes"><a class="anchor" href="#_central_classes"></a>3.1.2. Central Classes</h4>
-<div id="fig-level-2" class="imageblock">
-<div class="content">
-<img src="https://nicholascar.com/qsi-supermodel/images/level-2.png" alt="level 2">
-</div>
-<div class="title">Figure 5. Level 2</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_main_classes"><a class="anchor" href="#_main_classes"></a>3.1.3. Main Classes</h4>
-<div id="fig-level-3" class="imageblock">
-<div class="content">
-<img src="https://nicholascar.com/qsi-supermodel/images/level-3.png" alt="level 3">
-</div>
-<div class="title">Figure 6. Level 3</div>
-</div>
-<div class="sect4">
-<h5 id="_demonstration_implementation_overviews"><a class="anchor" href="#_demonstration_implementation_overviews"></a>Demonstration Implementation Overviews</h5>
-<div id="fig-level-3-cadastre" class="imageblock">
-<div class="content">
-<img src="https://nicholascar.com/qsi-supermodel/images/level-3-cadastre.png" alt="level 3 cadastre" width="50%">
-</div>
-<div class="title">Figure 7. Level 3</div>
-</div>
-<div id="fig-level-3-addressing" class="imageblock">
-<div class="content">
-<img src="https://nicholascar.com/qsi-supermodel/images/level-3-addressing.png" alt="level 3 addressing">
-</div>
-<div class="title">Figure 8. Level 3</div>
-</div>
-<div id="fig-level-3-placenames" class="imageblock">
-<div class="content">
-<img src="https://nicholascar.com/qsi-supermodel/images/level-3-placenames.png" alt="level 3 placenames">
-</div>
-<div class="title">Figure 9. Level 3</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_component_models_2"><a class="anchor" href="#_component_models_2"></a>3.1.4. Component Models</h4>
 <div class="paragraph">
-<p><em>Component Models</em> are implemented for each Dataset within this scenario&#8217;s scope. So far, a few Datasets are known to be within scope and these are given in <a href="#fig-level-3-datasets">Figure 7</a>.</p>
+<p>This Supermodel combined validators for the Backbone Model and each of the Component Models to make a single Supermodel Validator. The technical artifact for this is online at:</p>
 </div>
-<div id="fig-level-3-datasets" class="imageblock">
-<div class="content">
-<img src="https://nicholascar.com/qsi-supermodel/images/level-3-datasets.png" alt="level 3 datasets">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://w3id.org/profile/qsi-supermodel/validator" class="bare">https://w3id.org/profile/qsi-supermodel/validator</a></p>
+</li>
+</ul>
 </div>
-<div class="title">Figure 10. Level 3 Datasets</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_overarching_model"><a class="anchor" href="#_overarching_model"></a>3.1.5. Overarching Model</h4>
-<div class="paragraph">
-<p>For this Supermodel scenario, a fairly succinct overarching model that contains the <em>Main Classes</em> of each of the <em>Component Models</em> can be implemented since there is not a large number of Datasets for which <em>Component Models</em> are needed. <a href="#fig-level-3-overview">Figure 8</a> presents this overarching model.</p>
-</div>
-<div id="fig-level-3-overview" class="imageblock">
-<div class="content">
-<img src="https://nicholascar.com/qsi-supermodel/images/level-3-overview.png" alt="level 3 overview">
-</div>
-<div class="title">Figure 11. Level 3 Datasets</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_spatiality"><a class="anchor" href="#_spatiality"></a>3.1.6. Spatiality</h4>
-
-</div>
-<div class="sect3">
-<h4 id="_feature_labelling"><a class="anchor" href="#_feature_labelling"></a>3.1.7. Feature Labelling</h4>
-
-</div>
-<div class="sect3">
-<h4 id="_data_cataloguing"><a class="anchor" href="#_data_cataloguing"></a>3.1.8. Data Cataloguing</h4>
-
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_annex_a_data_validation"><a class="anchor" href="#_annex_a_data_validation"></a>Annex A: Data Validation</h2>
-<div class="sectionbody">
-
 </div>
 </div>
 <div class="sect1">
@@ -916,7 +869,7 @@ ex:feature-x
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-24 05:03:49 UTC
+Last updated 2022-06-24 11:04:25 UTC
 </div>
 </div>
 </body>
