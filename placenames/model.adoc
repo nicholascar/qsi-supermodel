@@ -196,6 +196,16 @@ Notes:
 
 The mdoelling of the previous three subsections is combined in the file https://github.com/nicholascar/qsi-supermodel/qsi-placenames/oxford-place-haunted.ttl[oxford-place-haunted.ttl] in this model's code repository.
 
+Note that the Place Name allocated to the property in the examples above could appear as a part of a printed address if desired, perhaps:
+
+```
+Haunted House
+20 Oxford Place
+Shorncliffe QLD 0417
+```
+
+All that would be required for this rendering is an address text template that orders `placeName` Address Components in relation to other Address Componets (`flatNumber` etc.).
+
 === Place Name Categorisation
 
 Previous modelling of Place Names in the https://linked.data.gov.au/def/placenames[Place Names Ontology] sought to categorise instances of the `Place` class with the https://linked.data.gov.au/def/placenames-categories[Place Names Categories] vocabulary. This model does not follow that categorisation and instead uses the Place Names Categories vocabulary to categorise the _Place Names_, not the _Places_. 
