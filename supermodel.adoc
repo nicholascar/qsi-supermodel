@@ -51,6 +51,7 @@ OWL modelling and the RDF data that is made according to it make extensive use o
 | Prefix | Namespace | Note
 
 | `bb` | `+https://w3id.org/profile/qsi-supermodel/backbone/+` | The namespace for this Supermodel's Backbone Model
+| `cad` | `+https://w3id.org/profile/qsi-supermodel/cadastre/+` | The namespace for this Supermodel's Cadastre Component Model
 | `ex` | `+http://example.com/+` | An example namespace
 | `geo` | `+http://www.opengis.net/ont/geosparql#+` | The GeoSAPRQL Ontology's namespace
 | `rdfs` | `+http://www.w3.org/2000/01/rdf-schema#+` | The namespace of the fundamental RDF Schema model used for OWL mododelling
@@ -156,7 +157,7 @@ It is available online at:
 
 ==== QSI Place Names Model
 
-The model used for Place Names within this Supermodel is both a profile of the <<ANZ National Address Model>> and the https://linked.data.gov.au/def/placenames[Place Names Ontology] made for Australian government. This profile contains both restrictions on the Address Model's element (certain Address Components cannot be used) and extensions from the Place Names Ontology (Place Names require specialised properties not relevant for normal Addresses).
+The model used for Place Names within this Supermodel is a profile of both the <<ANZ National Address Model>> and the https://linked.data.gov.au/def/placenames[Place Names Ontology] made for Australian government. This profile shows howt o model Place Names as Addresses with certain Address Components and Place Name ontology properties.
 
 It is defined within an Annex of this Spermodel and is available online separately at:
 
@@ -164,14 +165,35 @@ It is defined within an Annex of this Spermodel and is available online separate
 
 ==== QSI Cadastral Model
 
-[NOTE]
-====
-Introduce the Supermodel Concept
+The Cadastral Model used within this Supermodel is only a class heirarchy of cadastral objects. No properties are yet defined for these classes.
 
-* Scenario explanation
-* General Supermodel information
-* List other preamble sections e.g. Terms & Defs
-====
+The class hierarchy is as follows, with nested objects being subclasses of their parents:
+
+* `geo:FeatureCollection`
+** `cad:ParcelCollection`
+*** `cad:Property`
+**** `cad:TitledProperty`
+**** `cad:ValuationProperty`
+**** `cad:RuralProperty`
+* `geo:Feature`
+** `cad:Parcel`
+*** `cad:BaseParcel`
+**** `cad:RoadParcel`
+**** `cad:WaterParcel`
+**** `cad:OtherParcel`
+***** `cad:IntersectionParcel`
+***** `cad:UnlinkedParcel`
+*** `cad:Easement`
+*** `cad:BaseParcel`
+*** `cad:StrataParcel`
+*** `cad:Building`
+
+This class hierarchy is shown graphically in the figure below:
+
+
+[id=fig-cadastre]
+.The Cadastre Component Model
+image::images/cadastre.png[]
 
 :!sectnums:
 

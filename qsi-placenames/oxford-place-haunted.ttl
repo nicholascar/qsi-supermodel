@@ -1,3 +1,5 @@
+# Haunted House example for the QSI Placenames Model
+
 PREFIX addr: <https://w3id.org/profile/anz-address/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX ex: <http://example.com/>

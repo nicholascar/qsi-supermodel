@@ -12,7 +12,7 @@ It does not define any new classes or properties but just indicates a particular
 
 == Definition
 
-The formal definition of this profile is given below in human-readable form and in macehin-readable form in the file https://nicholascar.com/qsi-supermodel/qsi-placenames/profile.ttl[profile].
+The formal definition of this profile is given below in human-readable form and in machine-readable form in the file https://nicholascar.com/qsi-supermodel/qsi-placenames/profile.ttl[profile].
 
 [cols="1,4"]
 |===
@@ -21,7 +21,7 @@ The formal definition of this profile is given below in human-readable form and 
 | IRI | `https://w3id.org/profile/qsi-placenames`
 | Preferred Label | QSI Place Names Model
 | Definition | A profile of the ANZ National Address Model and the Place Names Ontology for the representation of Place Names in Queensland
-| Is profile of |  https://linked.data.gov.au/def/placenames[`placenames`] , https://w3id.org/profile/anz-address[`anz-address`]
+| Is profile of | https://linked.data.gov.au/def/placenames[`placenames`] , https://w3id.org/profile/anz-address[`anz-address`]
 | Creator | https://orcid.org/0000-0002-8742-7730[Nicholas J. Car]
 | Publisher | -
 | Created | 2022-06-24
