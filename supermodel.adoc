@@ -1,5 +1,6 @@
 = Queensland Spatial Information Supermodel
 :toc: left
+:toclevels: 3
 :table-stripes: even
 :sectnums:
 :sectids:
@@ -22,7 +23,7 @@ The Supermodel does this by implementing a <<Backbone Model>> that is an abstrac
 
 === Modelling Methods
 
-All the Component Models and the Backbone Model given here are implemented using the Web Ontology Language known as OWL <<OWL>>. OWL is a well used, standardised, powerful, formal, modelling language. Use of OWL creates data models that can be visualised and also that data can be validated against in automated ways, see <<Annex A: Data Validation>>.
+All the Component Models and the Backbone Model given here are implemented using the Web Ontology Language known as OWL <<OWL>>. OWL is a well used, standardised, powerful, formal, modelling language. Use of OWL creates data models that can be visualised and also that data can be validated against in automated ways, see <<Annex A: Validators>>.
 
 OWL modelling is a set-theoretic modelling language which means using it involves placing things - concepts, digital representations of real-world objects - into _classes_. Objects in the classes are all similar in some way: perhaps they all have similar _properties_.
 
@@ -59,11 +60,17 @@ In its definion section below, <<FeatureLabel>> is indicated as beeing authoriti
 
 == Models
 
-This Supermodel implements a "Backbone Model" which contains central elements from the various Component Models and some additional modelling "glue" to allow it to act as the integrative model between them. The Backbone Model and Component Models together make the Supermodel.
+=== Supermodel
+
+This Supermodel is the overall system that implements a <<Backbone Model>> which contains central elements from the various <<Component Models>> and some additional modelling "glue" to allow it to act as the integrative model between them. The Backbone Model, Component Models, model validators and this documentation together make the Supermodel.
+
+The following figure lists the various part models of this Supermodel.
 
 [id=fig-models]
-.An informal diagram the various Models of this Supermodel. The Administrative Areas model has not been detailed to date.
+.An informal diagram the part Models of this Supermodel. The Administrative Areas model is not yet defined.
 image::images/models.png[]
+
+For technical use, the machine-readable versions of the Backbone Model and the Component Models can be combined and used as the total Supermodel.
 
 === Backbone Model
 
@@ -141,6 +148,20 @@ This Backbone Model only defines one property not already defined in the various
 
 ==== ANZ National Address Model
 
+The ANZ National Address Model is a model that has bee defined externally to this Supermodel. 
+
+It is available online at:
+
+**https://w3id.org/profile/anz-address**
+
+==== QSI Place Names Model
+
+The model used for Place Names within this Supermodel is both a profile of the <<ANZ National Address Model>> and the https://linked.data.gov.au/def/placenames[Place Names Ontology] made for Australian government. This profile contains both restrictions on the Address Model's element (certain Address Components cannot be used) and extensions from the Place Names Ontology (Place Names require specialised properties not relevant for normal Addresses).
+
+It is defined within an Annex of this Spermodel and is available online separately at:
+
+**https://w3id.org/profile/qsi-placenames**
+
 ==== QSI Cadastral Model
 
 [NOTE]
@@ -152,67 +173,13 @@ Introduce the Supermodel Concept
 * List other preamble sections e.g. Terms & Defs
 ====
 
-== Model
-
-=== Model Structure
-
-==== Data Domains
-
-[id=fig-level-1]
-.Level 1
-image::images/level-1.png[]
-
-==== Central Classes
-
-[id=fig-level-2]
-.Level 2
-image::images/level-2.png[]
-
-==== Main Classes
-
-[id=fig-level-3]
-.Level 3
-image::images/level-3.png[]
-
-===== Demonstration Implementation Overviews
-
-[id=fig-level-3-cadastre, width="50%"]
-.Level 3
-image::images/level-3-cadastre.png[]
-
-[id=fig-level-3-addressing]
-.Level 3
-image::images/level-3-addressing.png[]
-
-[id=fig-level-3-placenames]
-.Level 3
-image::images/level-3-placenames.png[]
-
-==== Component Models
-
-_Component Models_ are implemented for each Dataset within this scenario's scope. So far, a few Datasets are known to be within scope and these are given in <<#fig-level-3-datasets, Figure 7>>.
-
-[id=fig-level-3-datasets]
-.Level 3 Datasets
-image::images/level-3-datasets.png[]
-
-==== Overarching Model
-
-For this Supermodel scenario, a fairly succinct overarching model that contains the _Main Classes_ of each of the _Component Models_ can be implemented since there is not a large number of Datasets for which _Component Models_ are needed. <<#fig-level-3-overview, Figure 8>> presents this overarching model.
-
-[id=fig-level-3-overview]
-.Level 3 Datasets
-image::images/level-3-overview.png[]
-
-==== Spatiality
-
-==== Feature Labelling
-
-==== Data Cataloguing
-
 :!sectnums:
 
-== Annex A: Data Validation
+== Annex A: Validators
+
+This Supermodel combined validators for the Backbone Model and each of the Component Models to make a single Supermodel Validator. The technical artifact for this is online at:
+
+* https://w3id.org/profile/qsi-supermodel/validator
 
 == Bibliography
 
