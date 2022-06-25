@@ -248,7 +248,9 @@ The sense of this is that Addresses can have components of various types, one of
 
 == Queries
 
-The following https://www.w3.org/TR/sparql11-query/[SPARQL] queries are provided to indicate how Place Names stored according to this model as Address Components may be extracted as "pure" Place Names. suce queries obviate the need for duplicative storage of Address Components and Place Names: the former only need be stored and the latter is able to be created as needed.
+The following https://www.w3.org/TR/sparql11-query/[SPARQL] queries are provided to indicate how Place Names stored according to this model as Address Components may be extracted as "pure" Place Names. Such queries obviate the need for duplicative storage of Address Components and Place Names: the former only need be stored and the latter is able to be created as needed.
+
+While these queries are SPARQL queries for RDF-native data storage, analogous SQL queries for transformations of data stored in relational form could easily be made too. Notes on formulating  relational data are given below in <<Test data: relational>>.
 
 === Test data
 
@@ -340,6 +342,36 @@ ex:16-oxford-place
 ```
 
 This data is also presented in the file https://nicholascar.com/qsi-supermodel/qsi-placenames/query-testing.ttl[query-testing.ttl].
+
+=== Test data: relational
+
+The data above may be stored in a relational data using the relational database implementation of the ANZ Address Model demonstrated at:
+
+* https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/implementations/relational
+
+The storage of the Address, Addressable Object and Geocode information is as per the existing examples for the ANZ Address Model in:
+
+* https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/extended-examples
+
+The basic place name Address Component given above would be represented in the `addresses_components` table like this:
+
+|===
+| address_pid | hasValue | has_value_text | type
+
+| ex:oxford | Haunted House | Haunted House | addrct:placeName
+|===
+
+By inferring that all Address Components of types indicated using the Place Names Categories vocabulary are specialised forms of `addrct:placeName`, the Place Names Category information could be recordeded like this:
+
+|===
+| address_pid | hasValue | has_value_text | type
+
+| ex:oxford | Haunted House | Haunted House | pnc:LANDMARK
+|===
+
+The extended place names-relevant elements of `dcterms:provenance`, `dcterms:source` & `pn:wasNamedBy` would need a new table to be created within the relational implementation which would then join those values to the Address Components table.
+
+Lifecycle Stages for Place Names (Address Components) could be implemented in the existing `addressses_lifecycle_stages` table or a new, similar, `addresss_components_lifecycle_stages` table. If such a table was created, it could be used for Address Component lifecycling beyond place naming.
 
 === Query: Extraction
 
