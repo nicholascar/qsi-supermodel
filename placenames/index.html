@@ -459,8 +459,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_queries">3. Queries</a>
 <ul class="sectlevel2">
 <li><a href="#_test_data">3.1. Test data</a></li>
-<li><a href="#_query_extraction">3.2. Query: Extraction</a></li>
-<li><a href="#_query_transform">3.3. Query: Transform</a></li>
+<li><a href="#_test_data_relational">3.2. Test data: relational</a></li>
+<li><a href="#_query_extraction">3.3. Query: Extraction</a></li>
+<li><a href="#_query_transform">3.4. Query: Transform</a></li>
 </ul>
 </li>
 </ul>
@@ -974,7 +975,10 @@ Shorncliffe QLD 0417</code></pre>
 <h2 id="_queries"><a class="anchor" href="#_queries"></a>3. Queries</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following <a href="https://www.w3.org/TR/sparql11-query/">SPARQL</a> queries are provided to indicate how Place Names stored according to this model as Address Components may be extracted as "pure" Place Names. suce queries obviate the need for duplicative storage of Address Components and Place Names: the former only need be stored and the latter is able to be created as needed.</p>
+<p>The following <a href="https://www.w3.org/TR/sparql11-query/">SPARQL</a> queries are provided to indicate how Place Names stored according to this model as Address Components may be extracted as "pure" Place Names. Such queries obviate the need for duplicative storage of Address Components and Place Names: the former only need be stored and the latter is able to be created as needed.</p>
+</div>
+<div class="paragraph">
+<p>While these queries are SPARQL queries for RDF-native data storage, analogous SQL queries for transformations of data stored in relational form could easily be made too. Notes on formulating  relational data are given below in <a href="#_test_data_relational">Test data: relational</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="_test_data"><a class="anchor" href="#_test_data"></a>3.1. Test data</h3>
@@ -1083,7 +1087,90 @@ ex:16-oxford-place
 </div>
 </div>
 <div class="sect2">
-<h3 id="_query_extraction"><a class="anchor" href="#_query_extraction"></a>3.2. Query: Extraction</h3>
+<h3 id="_test_data_relational"><a class="anchor" href="#_test_data_relational"></a>3.2. Test data: relational</h3>
+<div class="paragraph">
+<p>The data above may be stored in a relational data using the relational database implementation of the ANZ Address Model demonstrated at:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/implementations/relational" class="bare">https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/implementations/relational</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The storage of the Address, Addressable Object and Geocode information is as per the existing examples for the ANZ Address Model in:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/extended-examples" class="bare">https://github.com/nicholascar/anz-nat-addr-model-candidate/tree/main/extended-examples</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The basic place name Address Component given above would be represented in the <code>addresses_components</code> table like this:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">address_pid</th>
+<th class="tableblock halign-left valign-top">hasValue</th>
+<th class="tableblock halign-left valign-top">has_value_text</th>
+<th class="tableblock halign-left valign-top">type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ex:oxford</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Haunted House</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Haunted House</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addrct:placeName</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>By inferring that all Address Components of types indicated using the Place Names Categories vocabulary are specialised forms of <code>addrct:placeName</code>, the Place Names Category information could be recordeded like this:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">address_pid</th>
+<th class="tableblock halign-left valign-top">hasValue</th>
+<th class="tableblock halign-left valign-top">has_value_text</th>
+<th class="tableblock halign-left valign-top">type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ex:oxford</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Haunted House</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Haunted House</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pnc:LANDMARK</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The extended place names-relevant elements of <code>dcterms:provenance</code>, <code>dcterms:source</code> &amp; <code>pn:wasNamedBy</code> would need a new table to be created within the relational implementation which would then join those values to the Address Components table.</p>
+</div>
+<div class="paragraph">
+<p>Lifecycle Stages for Place Names (Address Components) could be implemented in the existing <code>addressses_lifecycle_stages</code> table or a new, similar, <code>addresss_components_lifecycle_stages</code> table. If such a table was created, it could be used for Address Component lifecycling beyond place naming.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_query_extraction"><a class="anchor" href="#_query_extraction"></a>3.3. Query: Extraction</h3>
 <div class="paragraph">
 <p>The folloqing SPARQL query will select only Address objects that have an Address Component of type <code>placeName</code> and some of the relevant Place Naming properties:</p>
 </div>
@@ -1138,7 +1225,7 @@ WHERE {
 </table>
 </div>
 <div class="sect2">
-<h3 id="_query_transform"><a class="anchor" href="#_query_transform"></a>3.3. Query: Transform</h3>
+<h3 id="_query_transform"><a class="anchor" href="#_query_transform"></a>3.4. Query: Transform</h3>
 <div class="paragraph">
 <p>To transform the Address with Place Name information in the <a href="#_test_data">Test data</a> into a "plain" Place Name, the following <code>CONSTRUCT</code> SPARQL query can be used instead of a <code>SELECT</code> query:</p>
 </div>
@@ -1228,7 +1315,7 @@ ex:property-x
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-25 03:12:49 UTC
+Last updated 2022-06-25 03:42:57 UTC
 </div>
 </div>
 </body>
