@@ -456,6 +456,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_place_name_categorisation">2.2. Place Name Categorisation</a></li>
 </ul>
 </li>
+<li><a href="#_queries">3. Queries</a>
+<ul class="sectlevel2">
+<li><a href="#_test_data">3.1. Test data</a></li>
+<li><a href="#_query_extraction">3.2. Query: Extraction</a></li>
+<li><a href="#_query_transform">3.3. Query: Transform</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -474,7 +481,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_definition"><a class="anchor" href="#_definition"></a>1. Definition</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The formal definition of this profile is given below in human-readable form and in machine-readable form in the file <a href="https://nicholascar.com/qsi-supermodel/qsi-placenames/profile.ttl">profile</a>.</p>
+<p>The formal definition of this profile is given below in human-readable form and in machine-readable form in the file <a href="https://nicholascar.com/qsi-supermodel/qsi-placenames/model.ttl">model.ttl</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all stripes-even stretch">
 <colgroup>
@@ -612,6 +619,11 @@ The ANZ National Address Model relates <code>Address</code> objects to <code>Lif
 <td class="tableblock halign-left valign-top"><p class="tableblock">ANZ Address Model namespace</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addrct</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://w3id.org/profile/anz-address/address-component-type/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANZ Address Model&#8217;s Address Component Types vocabulary&#8217;s namespace</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dcterms:</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://purl.org/dc/terms/</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dublin Core Terms vocabulary namespace</p></td>
@@ -645,6 +657,11 @@ The ANZ National Address Model relates <code>Address</code> objects to <code>Lif
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>pn</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>http://linked.data.gov.au/def/placenames/</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The Place Names Ontology namespace</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pnc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://linked.data.gov.au/def/placenames-categories/</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Place Names Categories vocabulary&#8217;s namespace</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdfs</code></p></td>
@@ -691,7 +708,7 @@ The ANZ National Address Model relates <code>Address</code> objects to <code>Lif
         ] ;
         dcterms:type isov2:current ;
         pn:wasNamedBy ex:qld-state-government ;
-        dcterms:source "http://example.com/press-releases/minister-names-haounted-house"^^xsd:anyURI
+        dcterms:source "http://example.com/press-releases/minister-names-haunted-house"^^xsd:anyURI ;
     ]
 .
 
@@ -740,22 +757,22 @@ Shorncliffe, QLD 4017</code></pre>
     a addr:Address ;
     addr:hasAddressComponent
         [
-            dcterms:type isov1:numberFirst ;
+            dcterms:type addrct:numberFirst ;
             addr:hasValueText "20" ;
             addr:hasValue 20
         ] ,
         [
-            dcterms:type isov1:streetLocality ;
+            dcterms:type addrct:streetLocality ;
             addr:hasValueText "Oxford Place" ;
             addr:hasValue &lt;https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD140492&gt;
         ] ,
         [
-            dcterms:type isov1:locality ;
+            dcterms:type addrct:locality ;
             addr:hasValueText "Shorncliffe" ;
             addr:hasValue &lt;https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03&gt;
         ] ,
         [
-            dcterms:type isov1:administrativeArea ;
+            dcterms:type addrct:administrativeArea ;
             addr:hasValueText "Queensland" ;
             addr:hasValue &lt;https://linked.data.gov.au/dataset/asgsed3/STE/3&gt;
         ] ,
@@ -794,7 +811,7 @@ Shorncliffe, QLD 4017</code></pre>
     a addr:Address ;
     addr:hasAddressComponent
         [
-            dcterms:type isov1:placeName ;
+            dcterms:type addrct:placeName ;
             addr:hasValueText "Haunted House" ;
             addr:hasValue "Haunted House"@en ;
             dcterms:provenance "The name Haunted House was assigned to this Place informally in the 1990 as children growing up near the house believed an apparition of a headless man resided there. The State officially recognised this name on Halloween in 1999."@en ;
@@ -843,10 +860,367 @@ Shorncliffe QLD 0417</code></pre>
 <div class="sect2">
 <h3 id="_place_name_categorisation"><a class="anchor" href="#_place_name_categorisation"></a>2.2. Place Name Categorisation</h3>
 <div class="paragraph">
-<p>Previous modelling of Place Names in the <a href="https://linked.data.gov.au/def/placenames">Place Names Ontology</a> sought to categorise instances of the <code>Place</code> class with the <a href="https://linked.data.gov.au/def/placenames-categories">Place Names Categories</a> vocabulary. This model does not follow that categorisation and instead uses the Place Names Categories vocabulary to categorise the <em>Place Names</em>, not the <em>Places</em>.</p>
+<p>Previous modelling of Place Names in the <a href="https://linked.data.gov.au/def/placenames">Place Names Ontology</a> sought to categorise instances of the <code>Place</code> class with the <a href="https://linked.data.gov.au/def/placenames-categories">Place Names Categories</a> vocabulary. This model does not follow that categorisation and instead uses the Place Names Categories vocabulary to categorise <em>Place Name</em> objects, not <em>Place</em> objects.</p>
 </div>
 <div class="paragraph">
-<p>The corollory of this is that all Concepts within the Place Names Categories vocabulary are narrower Concepts of the <a href="https://nicholascar.com/anz-nat-addr-model-candidate/model.html#_address_component_types_vocabulary">Address Component Types vocabulary</a>'s `placeName' Concept.</p>
+<p>The corollory of this is that all Concepts within the Place Names Categories vocabulary are narrower Concepts of the <a href="https://nicholascar.com/anz-nat-addr-model-candidate/model.html#_address_component_types_vocabulary">Address Component Types vocabulary</a>'s "place name" Concept.</p>
+</div>
+<div class="paragraph">
+<p>To demonstrate the combined hierarchy, a portion of the Address Component Types vocabulary is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>property name</p>
+</li>
+<li>
+<p>thoroughfare name</p>
+</li>
+<li>
+<p>place name</p>
+</li>
+<li>
+<p>number first</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+<li>
+<p>flat number</p>
+</li>
+<li>
+<p>postcode</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Place Names Categories may be insterted as refined concepts, narrower than <code>addrct:placeName</code> like so:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>property name</p>
+</li>
+<li>
+<p>thoroughfare name</p>
+</li>
+<li>
+<p>place name</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Administration</p>
+</li>
+<li>
+<p>Culture</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+<li>
+<p>Hydrology</p>
+</li>
+<li>
+<p>Landcover</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>number first</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+<li>
+<p>flat number</p>
+</li>
+<li>
+<p>postcode</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The sense of this is that Addresses can have components of various types, one of which is a "place name". If a component is a "place name", it might be further categorised as a "Hydrology" or "Administration" place name. Likely the example place name here of "Haunted House" could be categorised as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>place name</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Culture</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Landmark</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_queries"><a class="anchor" href="#_queries"></a>3. Queries</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following <a href="https://www.w3.org/TR/sparql11-query/">SPARQL</a> queries are provided to indicate how Place Names stored according to this model as Address Components may be extracted as "pure" Place Names. suce queries obviate the need for duplicative storage of Address Components and Place Names: the former only need be stored and the latter is able to be created as needed.</p>
+</div>
+<div class="sect2">
+<h3 id="_test_data"><a class="anchor" href="#_test_data"></a>3.1. Test data</h3>
+<div class="paragraph">
+<p>The following data is for the "Haunted House" example above stored as an Address with Address Components and additional Place Names ontology elements but not also as a Place Name directly.</p>
+</div>
+<div class="paragraph">
+<p>Also given is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the polygonal geometry of the Addressable Object, rather than a Point which would likely be a property centroid</p>
+</li>
+<li>
+<p>the Address' Geocode, still given as a property centroid point</p>
+</li>
+<li>
+<p>a second Address without a place name component</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Not included for simplicity&#8217;s sake is the Lifecycle Stage elements of the above examples.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">PREFIX addr: &lt;https://w3id.org/profile/anz-address/&gt;
+PREFIX addrct: &lt;http://w3id.org/profile/anz-address/address-component-type&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX ex: &lt;http://example.com/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX isov1: &lt;http://def.isotc211.org/iso19160/-1/2015/Address/code/AddressComponentType/&gt;
+PREFIX pn: &lt;http://linked.data.gov.au/def/placenames/&gt;
+PREFIX pnc: &lt;https://linked.data.gov.au/def/placenames-categories/&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+
+
+ex:20-oxford-place
+    a addr:Address ;
+    addr:hasAddressComponent
+        [
+            dcterms:type addrct:placeName , pnc:LANDMARK ;
+            addr:hasValue "Haunted House"@en ;
+            addr:hasValueText "Haunted House" ;
+            dcterms:provenance "The name Haunted House was assigned to this Place informally in the 1990 as children growing up near the house believed an apparition of a headless man resided there. The State officially recognised this name on Halloween in 1999."@en ;
+        ] ,
+        [
+            dcterms:type addrct:numberFirst ;
+            addr:hasValue 20 ;
+            addr:hasValueText "20"
+        ] ,
+        [
+            dcterms:type addrct:streetLocality ;
+            addr:hasValue &lt;https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD140492&gt; ;
+            addr:hasValueText "Oxford Place"
+        ] ,
+        [
+            dcterms:type addrct:locality ;
+            addr:hasValue &lt;https://linked.data.gov.au/dataset/gnaf/locality/loc38f189794e03&gt; ;
+            addr:hasValueText "Shorncliffe"
+        ] ,
+        [
+            dcterms:type addrct:administrativeArea ;
+            addr:hasValue &lt;https://linked.data.gov.au/dataset/asgsed3/STE/3&gt; ;
+            addr:hasValueText "Queensland"
+        ] ,
+        [
+            dcterms:type isov1:postcode ;
+            addr:hasValue 4017 ;
+            addr:hasValueText "4017"
+        ] ;
+    addr:hasGeocode [
+            dcterms:type &lt;https://linked.data.gov.au/dataset/gnaf/code/geocodeType/PC&gt; ;
+            geo:asWKT "POINT(153.08468369 -27.32703398)"^^geo:wktLiteral
+        ] ;
+    addr:isAddressFor ex:property-x ;
+.
+
+ex:property-x
+    a addr:AddressableObject ;
+    geo:hasGeometry [
+            geo:asWKT "POLYGON ((153.0846659 -27.3268844, 153.0845532 -27.3269404, 153.0846914 -27.3271691, 153.0848081 -27.3271143, 153.0846659 -27.3268844))"^^geo:wktLiteral
+        ] ;
+.
+
+# another Address irrelevant for Place Naming
+ex:16-oxford-place
+    a addr:Address ;
+    addr:hasAddressComponent
+        [
+            dcterms:type addrct:streetLocality ;
+            addr:hasValue &lt;https://linked.data.gov.au/dataset/gnaf/streetLocality/QLD140492&gt; ;
+            addr:hasValueText "Oxford Place"
+        ] ,
+        [
+            dcterms:type addrct:numberFirst ;
+            addr:hasValue 16 ;
+            addr:hasValueText "16"
+        ] ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This data is also presented in the file <a href="https://nicholascar.com/qsi-supermodel/qsi-placenames/query-testing.ttl">query-testing.ttl</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_query_extraction"><a class="anchor" href="#_query_extraction"></a>3.2. Query: Extraction</h3>
+<div class="paragraph">
+<p>The folloqing SPARQL query will select only Address objects that have an Address Component of type <code>placeName</code> and some of the relevant Place Naming properties:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sparql" data-lang="sparql">PREFIX addr: &lt;https://w3id.org/profile/anz-address/&gt;
+PREFIX addrct: &lt;http://w3id.org/profile/anz-address/address-component-type&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+
+SELECT ?a ?v ?p ?c
+WHERE {
+    ?a a addr:Address ;
+        addr:hasAddressComponent ?ac .
+
+  	?ac dcterms:type addrct:placeName ;
+       addr:hasValue ?v ;
+       dcterms:provenance ?p ;
+	.
+
+  { ?ac dcterms:type ?c }
+
+  FILTER ( ?c != addrct:placeName )
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The results from executing this query against the <a href="#_test_data">Test data</a> are:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">?a</th>
+<th class="tableblock halign-left valign-top">?v</th>
+<th class="tableblock halign-left valign-top">?p</th>
+<th class="tableblock halign-left valign-top">?c</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;http://example.com/20-oxford-place&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Haunted House"@en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"The name Haunted House &#8230;&#8203; on Halloween in 1999."@en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;https://linked.data.gov.au/def/placenames-categories/LANDMARK&gt;</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_query_transform"><a class="anchor" href="#_query_transform"></a>3.3. Query: Transform</h3>
+<div class="paragraph">
+<p>To transform the Address with Place Name information in the <a href="#_test_data">Test data</a> into a "plain" Place Name, the following <code>CONSTRUCT</code> SPARQL query can be used instead of a <code>SELECT</code> query:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sparql" data-lang="sparql">PREFIX addr: &lt;https://w3id.org/profile/anz-address/&gt;
+PREFIX addrct: &lt;http://w3id.org/profile/anz-address/address-component-type&gt;
+PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX pn: &lt;http://linked.data.gov.au/def/placenames/&gt;
+
+CONSTRUCT {
+      ?ac a pn:PlaceName ;
+          	pn:placeNameOf ?ao ;
+          	pn:name ?v ;
+          	dcterms:provenance ?p ;
+          	dcterms:type ?c .
+
+    ?ao
+      	a pn:Place ;
+      	geo:hasGeometry [
+			geo:asWKT ?g ;
+      	] .
+}
+WHERE {
+    ?a addr:hasAddressComponent ?ac ;
+          addr:isAddressFor ?ao ;
+          addr:hasGeocode/geo:asWKT ?g .
+
+  	?ac dcterms:type addrct:placeName ;
+         addr:hasValue ?v ;
+         dcterms:provenance ?p ;
+	.
+
+	{ ?ac dcterms:type ?c }
+
+    FILTER ( ?c != addrct:placeName )
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above query yields the following result:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">PREFIX dcterms: &lt;http://purl.org/dc/terms/&gt;
+PREFIX ex: &lt;http://example.com/&gt;
+PREFIX geo: &lt;http://www.opengis.net/ont/geosparql#&gt;
+PREFIX pn: &lt;http://linked.data.gov.au/def/placenames/&gt;
+PREFIX pnc: &lt;https://linked.data.gov.au/def/placenames-categories/&gt;
+
+[]
+    a pn:PlaceName ;
+    pn:name "Haunted House"@en ;
+    pn:placeNameOf ex:property-x ;
+    dcterms:provenance "The name Haunted House was assigned to this Place informally in the 1990 as children growing up near the house believed an apparition of a headless man resided there. The State officially recognised this name on Halloween in 1999."@en ;
+    dcterms:type pnc:LANDMARK ;
+.
+
+ex:property-x
+    a pn:Place ;
+    geo:hasGeometry [
+            geo:asWKT "POINT(153.08468369 -27.32703398)"^^geo:wktLiteral
+        ] ;
+.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here the Geocode of the address has been used for the Geometry of the Place.</p>
+</div>
+<div class="paragraph">
+<p>Replacing the Geocode match in the query above, <code>?a addr:hasGeocode/geo:asWKT ?g</code> with this, <code>?ao geo:hasGeometry/geo:asWKT ?g .</code>, will use the polygonal Geometry of the Addressable Object, rather than the Address' Geocode, for the Place&#8217;s Geometry. The Place data will now be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">ex:property-x
+    a pn:Place ;
+    geo:hasGeometry  [
+        geo:asWKT  "POLYGON ((153.0846659 -27.3268844, 153.0845532 -27.3269404, 153.0846914 -27.3271691, 153.0848081 -27.3271143, 153.0846659 -27.3268844))"^^geo:wktLiteral ;
+    ] ;
+.</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -854,7 +1228,7 @@ Shorncliffe QLD 0417</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-24 12:32:16 UTC
+Last updated 2022-06-25 03:12:49 UTC
 </div>
 </div>
 </body>
