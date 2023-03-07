@@ -3,6 +3,8 @@
 :table-stripes: even
 :sectnums:
 
+⚠️ *This repository and its content has moved to https://github.com/Spatial-Information-QLD/supermodel.*
+
 This document is both the front page of the Queensland Land Information Supermodel's repository and a _Guidance document_ and introduces all the other elements of this Supermodel.
 
 == Metadata
